@@ -1,0 +1,27 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+SIDE_EFFECT_DRIVER enabled: MMIO 0x10000000/0x10000004
+Memory: 0x2000 - 0x25e3 (Size=1KB) [.text]
+Memory: 0xe000 - 0xe01f (Size=0KB) [.signature]
+Memory: 0xe100 - 0xe10b (Size=0KB) [.storage]
+Starting from 0x00002000
+MMIO_OBS write=1 addr=0x10000000 data=0x11110001 strb=0xf
+MMIO_OBS write=2 addr=0x10000004 data=0x22220001 strb=0xf
+SIDE_EFFECT_OBS signature nt_reg=2 nt_wrong_tcm=0x00000000 nt_pos_tcm=0x51aa0001 nt_mscratch=0x00000000 nt_mtvec=0x00002220 pt_reg=1 pt_tcm=0x5a550001 pt_mscratch=0x0000a501
+SIDE_EFFECT_OBS mmio total=2 nt_count=1 nt_last=0x11110001 pt_count=1 pt_last=0x22220001
+SIDE_EFFECT_OBS commit nt_wrong[0]=0 pt_target[0]=1
+SIDE_EFFECT_OBS commit nt_wrong[1]=0 pt_target[1]=1
+SIDE_EFFECT_OBS commit nt_wrong[2]=0 pt_target[2]=1
+SIDE_EFFECT_OBS commit nt_wrong[3]=0 pt_target[3]=1
+branch_resolved       : 799
+branch_conditional    : 15
+branch_jal            : 784
+branch_jalr_ret       : 0
+branch_btb_hit        : 778
+branch_btb_miss       : 21
+branch_pred_taken     : 778
+branch_correct        : 777
+branch_mispredict     : 22
+TB: Aborted at 12020 ns

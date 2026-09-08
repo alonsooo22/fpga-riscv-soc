@@ -1,0 +1,240 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Mon Sep  7 21:56:27 2026
+| Host         : LAPTOP-A7P3RQOS running 64-bit major release  (build 9200)
+| Command      : report_drc -file D:/code/FPGA/vivado/ultra_scalar_bht_btb_xc7z020/reports/baseline_closure/param_sweep/D0/drc.rpt
+| Design       : riscv_tcm_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: riscv_tcm_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 38
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
+| DPIP-1    | Warning  | Input pipelining           | 7          |
+| DPOP-1    | Warning  | PREG Output pipelining     | 4          |
+| DPOP-2    | Warning  | MREG Output pipelining     | 4          |
+| REQP-1839 | Warning  | RAMB36 async control check | 20         |
+| RTSTAT-10 | Warning  | No routable loads          | 1          |
+| ZPS7-1    | Warning  | PS7 block required         | 1          |
++-----------+----------+----------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1839 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w input u_core/u_mul/mult_result_w/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w input u_core/u_mul/mult_result_w/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w__0 input u_core/u_mul/mult_result_w__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w__0 input u_core/u_mul/mult_result_w__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w__1 input u_core/u_mul/mult_result_w__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w__1 input u_core/u_mul/mult_result_w__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP u_core/u_mul/mult_result_w__2 input u_core/u_mul/mult_result_w__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP u_core/u_mul/mult_result_w output u_core/u_mul/mult_result_w/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__0 output u_core/u_mul/mult_result_w__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__1 output u_core/u_mul/mult_result_w__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__2 output u_core/u_mul/mult_result_w__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP u_core/u_mul/mult_result_w multiplier stage u_core/u_mul/mult_result_w/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__0 multiplier stage u_core/u_mul/mult_result_w__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__1 multiplier stage u_core/u_mul/mult_result_w__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP u_core/u_mul/mult_result_w__2 multiplier stage u_core/u_mul/mult_result_w__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_core/u_lsu/mem_addr_q_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/mem_d_accept_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/req_addr_q_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/req_hold_rd_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/req_rd_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/req_wr_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#9 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[13] (net: u_tcm/u_ram/ADDRARDADDR[12]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#10 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_core/u_lsu/mem_addr_q_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#11 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/mem_d_accept_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#12 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_addr_q_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#13 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_hold_rd_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#14 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_hold_wr_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#15 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_prio_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#16 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_rd_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#17 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/req_wr_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#18 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#19 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#20 Warning
+RAMB36 async control check  
+The RAMB36E1 u_tcm/u_ram/ram_reg_0_0 has an input control pin u_tcm/u_ram/ram_reg_0_0/ADDRARDADDR[14] (net: u_tcm/u_ram/ADDRARDADDR[13]) which is driven by a register (u_tcm/u_conv/u_requests/count_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+109 net(s) have no routable loads. The problem bus(es) and/or net(s) are u_axi/u_req/axi_i_araddr_o[29:0], u_axi/u_req/axi_i_arvalid_o,
+u_axi/u_req/axi_i_awvalid_o, u_axi/u_req/axi_i_wdata_o[31:0],
+u_axi/u_req/axi_i_wstrb_o[3:0], u_axi/u_req/axi_i_wvalid_o,
+u_tcm/u_conv/u_requests/axi_t_bvalid_o,
+u_tcm/u_conv/u_requests/axi_t_rid_o[3:0],
+u_tcm/u_conv/u_requests/axi_t_rlast_o,
+u_tcm/u_conv/u_requests/axi_t_rvalid_o,
+u_tcm/u_conv/u_requests/axi_t_wready_o
+u_tcm/u_conv/u_response/axi_t_rdata_o[31:0].
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+

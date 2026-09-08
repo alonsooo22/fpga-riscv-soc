@@ -1,0 +1,15 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+Error: Could not open /work/does-not-exist.elf
+branch_resolved       : 0
+branch_conditional    : 0
+branch_jal            : 0
+branch_jalr_ret       : 0
+branch_btb_hit        : 0
+branch_btb_miss       : 0
+branch_pred_taken     : 0
+branch_correct        : 0
+branch_mispredict     : 0
+TB: Aborted at 10 ns

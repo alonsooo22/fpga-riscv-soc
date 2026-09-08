@@ -1,0 +1,9 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+Memory: 0x2000 - 0x215f (Size=0KB) [.text]
+Memory: 0xe000 - 0xe007 (Size=0KB) [.signature]
+Starting from 0x00002000
+BJEP
+TB: Aborted at 2140 ns

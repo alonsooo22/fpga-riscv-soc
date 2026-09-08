@@ -1,0 +1,20 @@
+[
+  {
+    "id": "OPEN-E-001",
+    "question": "Can the supplied Vivado 2022.2 installation complete all four post-route configurations within the available host resources?",
+    "owner": "execution environment",
+    "blocks": ["REQ-P-001/AC-P-002"],
+    "target_phase": "5B",
+    "status": "RESOLVED",
+    "resolution": "Vivado 2022.2 completed A0/A1/D0/D1 synth, place, route and DRC; artifacts are under vivado/ultra_scalar_bht_btb_xc7z020/reports/param_sweep."
+  },
+  {
+    "id": "OPEN-E-002",
+    "question": "Are formal, CDC/RDC, and vendor-equivalence tools available in this environment?",
+    "owner": "execution environment",
+    "blocks": [],
+    "target_phase": "5A/5B",
+    "status": "RESOLVED",
+    "resolution": "No formal, CDC/RDC or vendor-equivalence tool was available; these checks remain explicitly unexecuted in reports/branch_predictor_verification.md."
+  }
+]

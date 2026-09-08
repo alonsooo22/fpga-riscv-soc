@@ -1,0 +1,385 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Mon Sep  7 22:00:42 2026
+| Host         : LAPTOP-A7P3RQOS running 64-bit major release  (build 9200)
+| Command      : check_timing -verbose -file D:/code/FPGA/vivado/ultra_scalar_bht_btb_xc7z020/reports/baseline_closure/param_sweep/D1/check_timing.rpt
+| Design       : riscv_tcm_top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (140)
+6. checking no_output_delay (145)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (140)
+--------------------------------
+ There are 138 input ports with no input delay specified. (HIGH)
+
+axi_i_arready_i
+axi_i_awready_i
+axi_i_bresp_i[0]
+axi_i_bresp_i[1]
+axi_i_bvalid_i
+axi_i_rdata_i[0]
+axi_i_rdata_i[10]
+axi_i_rdata_i[11]
+axi_i_rdata_i[12]
+axi_i_rdata_i[13]
+axi_i_rdata_i[14]
+axi_i_rdata_i[15]
+axi_i_rdata_i[16]
+axi_i_rdata_i[17]
+axi_i_rdata_i[18]
+axi_i_rdata_i[19]
+axi_i_rdata_i[1]
+axi_i_rdata_i[20]
+axi_i_rdata_i[21]
+axi_i_rdata_i[22]
+axi_i_rdata_i[23]
+axi_i_rdata_i[24]
+axi_i_rdata_i[25]
+axi_i_rdata_i[26]
+axi_i_rdata_i[27]
+axi_i_rdata_i[28]
+axi_i_rdata_i[29]
+axi_i_rdata_i[2]
+axi_i_rdata_i[30]
+axi_i_rdata_i[31]
+axi_i_rdata_i[3]
+axi_i_rdata_i[4]
+axi_i_rdata_i[5]
+axi_i_rdata_i[6]
+axi_i_rdata_i[7]
+axi_i_rdata_i[8]
+axi_i_rdata_i[9]
+axi_i_rresp_i[0]
+axi_i_rresp_i[1]
+axi_i_rvalid_i
+axi_i_wready_i
+axi_t_araddr_i[10]
+axi_t_araddr_i[11]
+axi_t_araddr_i[12]
+axi_t_araddr_i[13]
+axi_t_araddr_i[14]
+axi_t_araddr_i[15]
+axi_t_araddr_i[1]
+axi_t_araddr_i[2]
+axi_t_araddr_i[3]
+axi_t_araddr_i[4]
+axi_t_araddr_i[5]
+axi_t_araddr_i[6]
+axi_t_araddr_i[7]
+axi_t_araddr_i[8]
+axi_t_araddr_i[9]
+axi_t_arid_i[0]
+axi_t_arid_i[1]
+axi_t_arid_i[2]
+axi_t_arid_i[3]
+axi_t_arlen_i[0]
+axi_t_arlen_i[1]
+axi_t_arlen_i[2]
+axi_t_arlen_i[3]
+axi_t_arlen_i[4]
+axi_t_arlen_i[5]
+axi_t_arlen_i[6]
+axi_t_arlen_i[7]
+axi_t_arvalid_i
+axi_t_awaddr_i[10]
+axi_t_awaddr_i[11]
+axi_t_awaddr_i[12]
+axi_t_awaddr_i[13]
+axi_t_awaddr_i[14]
+axi_t_awaddr_i[15]
+axi_t_awaddr_i[1]
+axi_t_awaddr_i[2]
+axi_t_awaddr_i[3]
+axi_t_awaddr_i[4]
+axi_t_awaddr_i[5]
+axi_t_awaddr_i[6]
+axi_t_awaddr_i[7]
+axi_t_awaddr_i[8]
+axi_t_awaddr_i[9]
+axi_t_awid_i[0]
+axi_t_awid_i[1]
+axi_t_awid_i[2]
+axi_t_awid_i[3]
+axi_t_awlen_i[0]
+axi_t_awlen_i[1]
+axi_t_awlen_i[2]
+axi_t_awlen_i[3]
+axi_t_awlen_i[4]
+axi_t_awlen_i[5]
+axi_t_awlen_i[6]
+axi_t_awlen_i[7]
+axi_t_awvalid_i
+axi_t_bready_i
+axi_t_rready_i
+axi_t_wdata_i[0]
+axi_t_wdata_i[10]
+axi_t_wdata_i[11]
+axi_t_wdata_i[12]
+axi_t_wdata_i[13]
+axi_t_wdata_i[14]
+axi_t_wdata_i[15]
+axi_t_wdata_i[16]
+axi_t_wdata_i[17]
+axi_t_wdata_i[18]
+axi_t_wdata_i[19]
+axi_t_wdata_i[1]
+axi_t_wdata_i[20]
+axi_t_wdata_i[21]
+axi_t_wdata_i[22]
+axi_t_wdata_i[23]
+axi_t_wdata_i[24]
+axi_t_wdata_i[25]
+axi_t_wdata_i[26]
+axi_t_wdata_i[27]
+axi_t_wdata_i[28]
+axi_t_wdata_i[29]
+axi_t_wdata_i[2]
+axi_t_wdata_i[30]
+axi_t_wdata_i[31]
+axi_t_wdata_i[3]
+axi_t_wdata_i[4]
+axi_t_wdata_i[5]
+axi_t_wdata_i[6]
+axi_t_wdata_i[7]
+axi_t_wdata_i[8]
+axi_t_wdata_i[9]
+axi_t_wlast_i
+axi_t_wstrb_i[0]
+axi_t_wstrb_i[1]
+axi_t_wstrb_i[2]
+axi_t_wstrb_i[3]
+axi_t_wvalid_i
+intr_i[0]
+
+ There are 2 input ports with no input delay but user has a false path constraint. (MEDIUM)
+
+rst_cpu_i
+rst_i
+
+
+6. checking no_output_delay (145)
+---------------------------------
+ There are 145 ports with no output delay specified. (HIGH)
+
+axi_i_araddr_o[10]
+axi_i_araddr_o[11]
+axi_i_araddr_o[12]
+axi_i_araddr_o[13]
+axi_i_araddr_o[14]
+axi_i_araddr_o[15]
+axi_i_araddr_o[16]
+axi_i_araddr_o[17]
+axi_i_araddr_o[18]
+axi_i_araddr_o[19]
+axi_i_araddr_o[20]
+axi_i_araddr_o[21]
+axi_i_araddr_o[22]
+axi_i_araddr_o[23]
+axi_i_araddr_o[24]
+axi_i_araddr_o[25]
+axi_i_araddr_o[26]
+axi_i_araddr_o[27]
+axi_i_araddr_o[28]
+axi_i_araddr_o[29]
+axi_i_araddr_o[2]
+axi_i_araddr_o[30]
+axi_i_araddr_o[31]
+axi_i_araddr_o[3]
+axi_i_araddr_o[4]
+axi_i_araddr_o[5]
+axi_i_araddr_o[6]
+axi_i_araddr_o[7]
+axi_i_araddr_o[8]
+axi_i_araddr_o[9]
+axi_i_arvalid_o
+axi_i_awaddr_o[10]
+axi_i_awaddr_o[11]
+axi_i_awaddr_o[12]
+axi_i_awaddr_o[13]
+axi_i_awaddr_o[14]
+axi_i_awaddr_o[15]
+axi_i_awaddr_o[16]
+axi_i_awaddr_o[17]
+axi_i_awaddr_o[18]
+axi_i_awaddr_o[19]
+axi_i_awaddr_o[20]
+axi_i_awaddr_o[21]
+axi_i_awaddr_o[22]
+axi_i_awaddr_o[23]
+axi_i_awaddr_o[24]
+axi_i_awaddr_o[25]
+axi_i_awaddr_o[26]
+axi_i_awaddr_o[27]
+axi_i_awaddr_o[28]
+axi_i_awaddr_o[29]
+axi_i_awaddr_o[2]
+axi_i_awaddr_o[30]
+axi_i_awaddr_o[31]
+axi_i_awaddr_o[3]
+axi_i_awaddr_o[4]
+axi_i_awaddr_o[5]
+axi_i_awaddr_o[6]
+axi_i_awaddr_o[7]
+axi_i_awaddr_o[8]
+axi_i_awaddr_o[9]
+axi_i_awvalid_o
+axi_i_wdata_o[0]
+axi_i_wdata_o[10]
+axi_i_wdata_o[11]
+axi_i_wdata_o[12]
+axi_i_wdata_o[13]
+axi_i_wdata_o[14]
+axi_i_wdata_o[15]
+axi_i_wdata_o[16]
+axi_i_wdata_o[17]
+axi_i_wdata_o[18]
+axi_i_wdata_o[19]
+axi_i_wdata_o[1]
+axi_i_wdata_o[20]
+axi_i_wdata_o[21]
+axi_i_wdata_o[22]
+axi_i_wdata_o[23]
+axi_i_wdata_o[24]
+axi_i_wdata_o[25]
+axi_i_wdata_o[26]
+axi_i_wdata_o[27]
+axi_i_wdata_o[28]
+axi_i_wdata_o[29]
+axi_i_wdata_o[2]
+axi_i_wdata_o[30]
+axi_i_wdata_o[31]
+axi_i_wdata_o[3]
+axi_i_wdata_o[4]
+axi_i_wdata_o[5]
+axi_i_wdata_o[6]
+axi_i_wdata_o[7]
+axi_i_wdata_o[8]
+axi_i_wdata_o[9]
+axi_i_wstrb_o[0]
+axi_i_wstrb_o[1]
+axi_i_wstrb_o[2]
+axi_i_wstrb_o[3]
+axi_i_wvalid_o
+axi_t_arready_o
+axi_t_awready_o
+axi_t_bid_o[0]
+axi_t_bid_o[1]
+axi_t_bid_o[2]
+axi_t_bid_o[3]
+axi_t_bvalid_o
+axi_t_rdata_o[0]
+axi_t_rdata_o[10]
+axi_t_rdata_o[11]
+axi_t_rdata_o[12]
+axi_t_rdata_o[13]
+axi_t_rdata_o[14]
+axi_t_rdata_o[15]
+axi_t_rdata_o[16]
+axi_t_rdata_o[17]
+axi_t_rdata_o[18]
+axi_t_rdata_o[19]
+axi_t_rdata_o[1]
+axi_t_rdata_o[20]
+axi_t_rdata_o[21]
+axi_t_rdata_o[22]
+axi_t_rdata_o[23]
+axi_t_rdata_o[24]
+axi_t_rdata_o[25]
+axi_t_rdata_o[26]
+axi_t_rdata_o[27]
+axi_t_rdata_o[28]
+axi_t_rdata_o[29]
+axi_t_rdata_o[2]
+axi_t_rdata_o[30]
+axi_t_rdata_o[31]
+axi_t_rdata_o[3]
+axi_t_rdata_o[4]
+axi_t_rdata_o[5]
+axi_t_rdata_o[6]
+axi_t_rdata_o[7]
+axi_t_rdata_o[8]
+axi_t_rdata_o[9]
+axi_t_rid_o[0]
+axi_t_rid_o[1]
+axi_t_rid_o[2]
+axi_t_rid_o[3]
+axi_t_rlast_o
+axi_t_rvalid_o
+axi_t_wready_o
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+

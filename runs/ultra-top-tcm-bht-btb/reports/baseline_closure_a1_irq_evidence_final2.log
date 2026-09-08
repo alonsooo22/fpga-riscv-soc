@@ -1,0 +1,31 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+IRQ_DRIVER enabled: masked_trigger=0x00002024 masked_clear=0x00002028 enabled_trigger=0x00002050 handler=0x0000209c branch=0x00002054
+Memory: 0x2000 - 0x20cb (Size=0KB) [.text]
+Memory: 0xe000 - 0xe00f (Size=0KB) [.signature]
+Starting from 0x00002000
+IRQ_DRIVER assert masked source at commit PC 0x00002024, cycle 21
+IRQ_DRIVER withdraw masked source at commit PC 0x00002028, cycle 22
+IRQ_OBS take=1 exception_pc=0x00000000 mepc=0x00000000 mcause=0x00000000 mip=0x00000800
+IRQ_OBS exception_event=1 exception_pc=0x00002050 mepc=0x00000000 mcause=0x00000000
+IRQ_DRIVER assert enabled source at commit PC 0x00002050, cycle 44
+IRQ_OBS branch_window fetch_pc=0x00002054 predictor_pc=0x00002058 exec_pc=0x00002054 exec_req=0 redirect_req=0
+IRQ_DRIVER withdraw enabled source at handler PC 0x0000209c, cycle 51
+IRQ_OBS branch_mispredict pc=0x00002054
+P
+IRQ_OBS signature masked_handlers=0 enabled_handlers=1 mcause=0x8000000b mepc=0x00002050
+IRQ_OBS summary takes=1 exception_events=1 exception_pc=0x00002050 mepc=0x00002050 mcause=0x8000000b mip=0x00000000
+IRQ_OBS branch_interleave window=1 mispredict=1 branch_pc=0x00002054
+branch_resolved       : 405
+branch_conditional    : 5
+branch_jal            : 400
+branch_jalr_ret       : 0
+branch_btb_hit        : 399
+branch_btb_miss       : 6
+branch_pred_taken     : 399
+branch_correct        : 403
+branch_mispredict     : 2
+TB: Aborted at 5020 ns
+EXIT_CODE=0

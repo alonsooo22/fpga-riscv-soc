@@ -1,0 +1,31 @@
+cycle_start     : 13326
+cycle_end       : 170789752
+instret_start   : 11965
+instret_end     : 150790522
+cycles          : 170776426
+instructions retired: 150778557
+scoreboard_stall_cycles : 12368613
+lsu_stall_cycles        : 0
+pipe_stall_cycles       : 0
+div_wait_cycles         : 0
+csr_wait_cycles         : 0
+branch_request_events   : 3814648
+branch_redirect_cycles  : 3814648
+branch_flush_cycles     : 7629296
+fetch_starve_cycles     : 0
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 170776426
+Total time (secs): 1
+Iterations/Sec   : 516
+ERROR! Must execute for at least 10 secs for a valid result!
+Iterations       : 516
+Compiler version : riscv-none-elf-gcc 15.2.0
+Compiler flags   : -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medany -msmall-data-limit=0 -O3 -ffreestanding -fno-builtin -fno-stack-protector -fno-pic -fdata-sections -ffunction-sections top_tcm_axi
+Memory location  : TCM
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xe6dc
+Errors detected

@@ -1,0 +1,56 @@
+%Warning-TIMESCALEMOD: ../../core/riscv/../../core/riscv/riscv_fetch.v:42:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   42 | module riscv_fetch
+      |        ^~~~~~~~~~~
+                       ../../core/riscv/../../core/riscv/riscv_branch_predict.v:11:8: ... Location of module with timescale
+   11 | module riscv_branch_predict
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.050
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+make: Entering directory '/work/sim/baseline_closure/obj_frontend'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_frontend_pressure.cpp Vtb_frontend_pressure___024root__0.cpp Vtb_frontend_pressure__main.cpp Vtb_frontend_pressure__ConstPool__0__Slow.cpp Vtb_frontend_pressure___024root__Slow.cpp Vtb_frontend_pressure___024root__0__Slow.cpp Vtb_frontend_pressure__Syms__Slow.cpp > Vtb_frontend_pressure__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_frontend_pressure__ALL.o Vtb_frontend_pressure__ALL.cpp
+g++    verilated.o verilated_timing.o verilated_threads.o Vtb_frontend_pressure__ALL.a    -pthread -lpthread -latomic   -o Vtb_frontend_pressure
+rm Vtb_frontend_pressure__ALL.verilator_deplist.tmp
+make: Leaving directory '/work/sim/baseline_closure/obj_frontend'
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.118 MB sources in 5 modules, into 0.160 MB in 7 C++ files needing 0.002 MB
+- Verilator: Walltime 8.229 s (elab=0.002, cvt=0.027, bld=8.114); cpu 0.027 s on 1 threads; allocated 34.246 MB
+FRONT_OBS cycle=1 rd=0 req_pc=00000000 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=2 rd=0 req_pc=00000000 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=3 rd=0 req_pc=00000004 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=4 rd=0 req_pc=00000300 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000300 branch_req=1 redirect_pc=00000100 squash=1 redirect=1 flush=1
+FRONT_OBS cycle=5 rd=1 req_pc=00000100 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=1 flush=1
+FRONT_OBS cycle=6 rd=0 req_pc=00000100 resp=0 valid=0 out_pc=00000100 instr=00000000 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=7 rd=1 req_pc=00000300 resp=1 valid=1 out_pc=00000100 instr=11111111 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=8 rd=0 req_pc=00000300 resp=0 valid=0 out_pc=00000100 instr=11111111 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=9 rd=0 req_pc=00000300 resp=1 valid=1 out_pc=00000100 instr=33333333 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=10 rd=0 req_pc=00000300 resp=0 valid=1 out_pc=00000100 instr=33333333 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=11 rd=0 req_pc=00000300 resp=0 valid=1 out_pc=00000100 instr=33333333 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=12 rd=0 req_pc=00000300 resp=0 valid=1 out_pc=00000100 instr=33333333 pred=1 pred_target=00000300 branch_req=0 redirect_pc=00000100 squash=0 redirect=0 flush=0
+FRONT_HIT downstream_stall stable_valid=1 stable_pc=00000100 stable_pred=1
+FRONT_OBS cycle=13 rd=0 req_pc=00000300 resp=0 valid=0 out_pc=00000100 instr=33333333 pred=1 pred_target=00000300 branch_req=1 redirect_pc=00000600 squash=1 redirect=0 flush=1
+FRONT_OBS cycle=14 rd=0 req_pc=00000600 resp=0 valid=0 out_pc=00000300 instr=33333333 pred=1 pred_target=00000800 branch_req=0 redirect_pc=00000600 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=15 rd=0 req_pc=00000600 resp=0 valid=0 out_pc=00000300 instr=33333333 pred=1 pred_target=00000800 branch_req=0 redirect_pc=00000600 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=16 rd=0 req_pc=00000600 resp=0 valid=0 out_pc=00000300 instr=33333333 pred=1 pred_target=00000800 branch_req=0 redirect_pc=00000600 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=17 rd=1 req_pc=00000800 resp=1 valid=1 out_pc=00000600 instr=22222222 pred=1 pred_target=00000800 branch_req=0 redirect_pc=00000600 squash=0 redirect=0 flush=0
+FRONT_HIT skid_redirect old_pc=0x00000100 dropped=1 new_pc=0x00000600 pred_meta=1
+FRONT_OBS cycle=18 rd=0 req_pc=00000000 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=19 rd=0 req_pc=00000000 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=20 rd=0 req_pc=00000004 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00000000 squash=0 redirect=0 flush=0
+FRONT_OBS cycle=21 rd=0 req_pc=00000008 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=1 redirect_pc=00001000 squash=1 redirect=1 flush=1
+FRONT_OBS cycle=22 rd=1 req_pc=00001000 resp=0 valid=0 out_pc=00000000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001000 squash=0 redirect=1 flush=1
+FRONT_OBS cycle=23 rd=0 req_pc=00001000 resp=0 valid=0 out_pc=00001000 instr=00000000 pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001000 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=24 rd=0 req_pc=00001000 resp=0 valid=0 out_pc=00001000 instr=00000000 pred=0 pred_target=00000000 branch_req=1 redirect_pc=00001200 squash=1 redirect=0 flush=1
+FRONT_OBS cycle=25 rd=1 req_pc=00001200 resp=1 valid=0 out_pc=00001000 instr=aaaaaaaa pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001200 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=26 rd=0 req_pc=00001200 resp=0 valid=0 out_pc=00001000 instr=aaaaaaaa pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001200 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=27 rd=0 req_pc=00001200 resp=0 valid=0 out_pc=00001000 instr=aaaaaaaa pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001200 squash=0 redirect=0 flush=1
+FRONT_OBS cycle=28 rd=1 req_pc=00001204 resp=1 valid=1 out_pc=00001200 instr=bbbbbbbb pred=0 pred_target=00000000 branch_req=0 redirect_pc=00001200 squash=0 redirect=0 flush=0
+FRONT_HIT outstanding_redirect old_resp_dropped=1 new_pc=0x00001200
+PASS: frontend pressure test scenarios=3
+- tb_frontend_pressure.v:291: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.050 2026-07-01
+- Verilator: $finish at 276ns; walltime 0.000 s; speed 1.056 ms/s
+- Verilator: cpu 0.000 s on 1 threads; allocated 6 MB

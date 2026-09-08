@@ -1,0 +1,92 @@
+[
+  {
+    "id": "REQ-F-001",
+    "phase": 1,
+    "category": "functional",
+    "priority": "critical",
+    "ambiguity_score": 0.0,
+    "statement": "When enabled, the predictor shall use a 64-entry direct-mapped BTB with a 2-bit BHT, complete PC tag, target, valid bit, and JAL type bit.",
+    "acceptance_criteria": [
+      {"id": "AC-F-001", "statement": "Default BRANCH_PREDICTOR_INDEX_W=6 elaborates 64 table entries and a 24-bit PC tag.", "status": "PASSED"},
+      {"id": "AC-F-002", "statement": "The lookup requires valid and complete-tag equality.", "status": "PASSED"}
+    ],
+    "source": "approved detailed plan sections V and XII",
+    "allocated_to": ["riscv_branch_predict.v"],
+    "verification_methods": ["directed unit test", "lint", "Vivado utilization"]
+  },
+  {
+    "id": "REQ-F-002",
+    "phase": 1,
+    "category": "functional",
+    "priority": "critical",
+    "ambiguity_score": 0.0,
+    "statement": "The predictor shall predict only conditional branches and JAL; JALR, RET, indirect calls, CSR/trap/xRET, and interrupts shall retain the existing execution redirect path.",
+    "acceptance_criteria": [
+      {"id": "AC-F-003", "statement": "A correctly predicted conditional branch or JAL does not redirect or flush.", "status": "PASSED"},
+      {"id": "AC-F-004", "statement": "JALR/RET behavior is unchanged and never trains the first-version predictor.", "status": "PASSED"}
+    ],
+    "source": "approved detailed plan sections V and IX",
+    "allocated_to": ["riscv_fetch.v", "riscv_exec.v", "riscv_issue.v", "riscv_core.v"],
+    "verification_methods": ["directed CPU tests", "CoreMark CRC", "ISA smoke"]
+  },
+  {
+    "id": "REQ-F-003",
+    "phase": 1,
+    "category": "equivalence",
+    "priority": "critical",
+    "ambiguity_score": 0.0,
+    "statement": "With SUPPORT_BRANCH_PREDICTION=0, the scalar CPU shall preserve baseline instruction behavior, retired instructions, CRC, and timed cycles.",
+    "acceptance_criteria": [
+      {"id": "AC-F-005", "statement": "Predictor-off CoreMark has identical text, retired instructions, cycles, CPI, and component CRC to the isolated baseline run.", "status": "PASSED"},
+      {"id": "AC-F-006", "statement": "The predictor table is absent from the disabled Vivado design.", "status": "PASSED"}
+    ],
+    "source": "approved detailed plan sections III, IV, XI, and XII",
+    "allocated_to": ["riscv_fetch.v", "riscv_decode.v", "riscv_issue.v", "riscv_exec.v", "riscv_core.v", "riscv_tcm_top.v"],
+    "verification_methods": ["CoreMark comparison", "ISA regression", "Vivado synthesis"]
+  },
+  {
+    "id": "REQ-F-004",
+    "phase": 1,
+    "category": "alignment",
+    "priority": "critical",
+    "ambiguity_score": 0.0,
+    "statement": "Prediction metadata shall remain aligned with the accepted instruction request through response buffering, decode staging, stalls, and redirects.",
+    "acceptance_criteria": [
+      {"id": "AC-F-007", "statement": "The prediction bit is captured with pc_d_q on request acceptance and with the instruction in the skid/extra-decode buffers.", "status": "PASSED"},
+      {"id": "AC-F-008", "statement": "No wrong-path instruction retires or creates a side effect after a misprediction.", "status": "PARTIAL"}
+    ],
+    "source": "approved detailed plan section VIII",
+    "allocated_to": ["riscv_fetch.v", "riscv_decode.v", "riscv_issue.v", "riscv_exec.v"],
+    "verification_methods": ["directed stall tests", "assertions", "CoreMark/ISA regression"]
+  },
+  {
+    "id": "REQ-P-001",
+    "phase": 1,
+    "category": "PPA",
+    "priority": "high",
+    "ambiguity_score": 0.0,
+    "statement": "The predictor shall target distributed RAM/LUTRAM, add no BRAM or DSP, and keep the stated LUT/FF and Fmax goals subject to post-route measurement.",
+    "acceptance_criteria": [
+      {"id": "AC-P-001", "statement": "Vivado reports the predictor arrays as LUTRAM or distributed RAM, with zero BRAM/DSP increment.", "status": "PASSED"},
+      {"id": "AC-P-002", "statement": "Post-route Fmax, LUT, and FF deltas are reported for A0/A1/D0/D1.", "status": "PASSED"}
+    ],
+    "source": "approved detailed plan sections VII, XI, and XII",
+    "allocated_to": ["riscv_branch_predict.v", "Vivado scripts"],
+    "verification_methods": ["Vivado post-route reports"]
+  },
+  {
+    "id": "REQ-V-001",
+    "phase": 1,
+    "category": "verification",
+    "priority": "high",
+    "ambiguity_score": 0.0,
+    "statement": "The isolated experiment shall provide reproducible unit, integration, CoreMark, and Vivado evidence without changing CoreMark source, compiler options, LSU, forwarding, scoreboard policy, or pipeline count.",
+    "acceptance_criteria": [
+      {"id": "AC-V-001", "statement": "All executed checks include command, tool version, configuration, result, and artifact path.", "status": "PASSED"},
+      {"id": "AC-V-002", "statement": "Unexecuted checks and residual risks are explicitly reported.", "status": "PASSED"}
+    ],
+    "source": "approved execution prompt sections II, X, XI, and XIV",
+    "allocated_to": ["docs", "sim", "reports"],
+    "verification_methods": ["evidence review"]
+  }
+]

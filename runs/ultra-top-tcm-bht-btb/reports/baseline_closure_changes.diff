@@ -1,0 +1,110 @@
+# baseline_closure_changes.diff
+#
+# This is a current-round change manifest, not a VCS-generated diff.  The
+# isolated experiment has no VCS metadata.  Historical reports/rtl_changes.diff
+# and pre-change evidence are intentionally not included or overwritten here.
+
+diff --git a/core/riscv/riscv_branch_predict.v b/core/riscv/riscv_branch_predict.v
+@@ fixed-capacity predictor contract @@
+- public BRANCH_PREDICTOR_INDEX_W / caller-selected table capacity
++ localparam BTB_ENTRIES=64, INDEX_W=6, TAG_W=24
++ index PC[7:2], full tag PC[31:8], RAM64X1D retained
+
+diff --git a/core/riscv/riscv_core.v b/core/riscv/riscv_core.v
+@@ integration and simulation observation @@
+- BRANCH_PREDICTOR_INDEX_W public parameter and instance propagation
++ SUPPORT_BRANCH_PREDICTION is the only predictor integration parameter
++ Verilator-only observation hooks for IRQ, branch and frontend evidence
+
+diff --git a/top_tcm_axi/src_v/riscv_tcm_top.v b/top_tcm_axi/src_v/riscv_tcm_top.v
+@@ top-level parameter cleanup @@
+- predictor capacity propagation through the top
++ fixed-capacity predictor integration; no capacity build argument
+
+diff --git a/top_tcm_axi/tb/testbench.h b/top_tcm_axi/tb/testbench.h
+@@ simulation-only environment closure @@
+- empty set_interrupt(int irq)
++ set_interrupt drives the real intr_in level
++ default-off IRQ script, source withdrawal, trap/mepc/mcause observation
++ MMIO AW/W transaction monitor and wrong-path commit checks
++ closure checks return fault/nonzero on failure
+
+diff --git a/isa_sim/riscv_main.cpp b/isa_sim/riscv_main.cpp
+@@ failure propagation @@
+- ELF load failure could fall through to successful simulation termination
++ elf_load failure prints an error and returns nonzero
+
+diff --git a/sim/branch_predictor/tb_riscv_branch_predict.v b/sim/branch_predictor/tb_riscv_branch_predict.v
+@@ unit test validity @@
++ real 64-entry instance
++ pre-edge update_hit checks, tag/index conflict, reset/FENCE.I/JAL,
++ BHT state transitions/saturation, independent lookup/update and safe-off tests
++ fatal/watchdog failures use nonzero status
+
+diff --git a/sim/baseline_closure/tb_frontend_pressure.v b/sim/baseline_closure/tb_frontend_pressure.v
+new file mode 100644
+@@ bounded frontend pressure fixture @@
++ downstream stall stability
++ skid response plus redirect squash
++ late outstanding response drop after redirect
++ request/response/prediction/redirect observation and hit evidence
+
+diff --git a/sim/baseline_closure/irq_test.S b/sim/baseline_closure/irq_test.S
+new file mode 100644
+diff --git a/sim/baseline_closure/irq_test.ld b/sim/baseline_closure/irq_test.ld
+new file mode 100644
+diff --git a/sim/baseline_closure/irq_test.elf b/sim/baseline_closure/irq_test.elf
+new file mode 100644
+diff --git a/sim/baseline_closure/irq_test.map b/sim/baseline_closure/irq_test.map
+new file mode 100644
+@@ external interrupt directed image @@
++ masked pulse, enabled external pulse, trap handler, mcause/mepc signature,
++ mip/source cleanup, mret recovery and branch-interleave target
+
+diff --git a/sim/baseline_closure/wrong_path_side_effect_test.S b/sim/baseline_closure/wrong_path_side_effect_test.S
+new file mode 100644
+diff --git a/sim/baseline_closure/wrong_path_side_effect_test.ld b/sim/baseline_closure/wrong_path_side_effect_test.ld
+new file mode 100644
+diff --git a/sim/baseline_closure/wrong_path_side_effect_test.elf b/sim/baseline_closure/wrong_path_side_effect_test.elf
+new file mode 100644
+diff --git a/sim/baseline_closure/wrong_path_side_effect_test.map b/sim/baseline_closure/wrong_path_side_effect_test.map
+new file mode 100644
+@@ independent wrong-path side-effect cases @@
++ predicted-NT/actual-T and trained-predicted-T/actual-NT cases
++ separate register, TCM, CSR and test-MMIO side effects
++ positive controls and target commit counters
+
+diff --git a/sim/baseline_closure/run_baseline_closure.ps1 b/sim/baseline_closure/run_baseline_closure.ps1
+new file mode 100644
+@@ reproducible simulation entry point @@
++ A0/A1/D0/D1 matrix, fixed Docker mount, unit/frontend/directed/IRQ/side/CoreMark
++ bounded tests and exit-code propagation
+
+diff --git a/vivado/ultra_scalar_bht_btb_xc7z020/implement_param_sweep_ooc.tcl b/vivado/ultra_scalar_bht_btb_xc7z020/implement_param_sweep_ooc.tcl
+@@ OOC implementation/reporting @@
+- capacity generic and unsupported report_timing unconstrained option
++ fixed-capacity configuration, dynamic clock period, route/check_timing/DRC
++ setup/hold/clock/unconstrained and hierarchical resource reports
+
+diff --git a/vivado/ultra_scalar_bht_btb_xc7z020/run_baseline_closure_vivado.ps1 b/vivado/ultra_scalar_bht_btb_xc7z020/run_baseline_closure_vivado.ps1
+new file mode 100644
+@@ Vivado entry point @@
++ D0/D1 100 MHz sweep and D1 80 MHz development-frequency run
+
+diff --git a/docs/baseline_closure_contract.md b/docs/baseline_closure_contract.md
+new file mode 100644
+diff --git a/reports/baseline_closure_prechange.md b/reports/baseline_closure_prechange.md
+new file mode 100644
+diff --git a/reports/baseline_closure_verification.md b/reports/baseline_closure_verification.md
+new file mode 100644
+diff --git a/reports/baseline_closure_results.md b/reports/baseline_closure_results.md
+new file mode 100644
+diff --git a/reports/baseline_handoff.md b/reports/baseline_handoff.md
+new file mode 100644
+@@ evidence and handoff documents @@
++ scope, commands, versions, logs, scenario hit evidence, regression tables,
++ full timing/resource wording, residual risks and independent acceptance entry
+
+Generated ELF/MAP/signature/log/checkpoint/report artifacts under the current
+experiment directories are evidence from this round.  The original baseline
+directories and historical reports remain outside this manifest's write scope.

@@ -1,0 +1,1493 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sun Sep  6 17:22:14 2026
+| Host         : LAPTOP-A7P3RQOS running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -max_paths 20 -path_type full -file D:/code/FPGA/vivado/ultra_scalar_top_tcm_xc7z020/reports/impl_ooc_100mhz/critical_paths.rpt
+| Design       : riscv_tcm_top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -3.080ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_fetch/branch_pc_q_reg[29]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.982ns  (logic 4.805ns (37.011%)  route 8.177ns (62.989%))
+  Logic Levels:           12  (CARRY4=3 LUT3=1 LUT4=1 LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.559ns = ( 11.559 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.693ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.693     1.693    
+    RAMB36_X2Y5          RAMB36E1                     0.000     1.693 r  u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+    RAMB36_X2Y5          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.147 r  u_tcm/u_ram/ram_reg_2_0/DOBDO[1]
+                         net (fo=1, routed)           0.947     5.095    u_core/u_fetch/ram_read0_q[17]
+    SLICE_X31Y20         LUT3 (Prop_lut3_I1_O)        0.124     5.219 r  u_core/u_fetch/rd_result_e1_q[17]_i_2/O
+                         net (fo=145, routed)         1.179     6.397    u_core/u_issue/u_regfile/mem_data_wr_q[24]_i_5[1]
+    SLICE_X32Y28         MUXF7 (Prop_muxf7_S_O)       0.292     6.689 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7/O
+                         net (fo=1, routed)           0.000     6.689    u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7_n_0
+    SLICE_X32Y28         MUXF8 (Prop_muxf8_I1_O)      0.088     6.777 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_4/O
+                         net (fo=1, routed)           1.130     7.907    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2_0
+    SLICE_X26Y23         LUT5 (Prop_lut5_I2_O)        0.319     8.226 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3/O
+                         net (fo=1, routed)           0.869     9.095    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3_n_0
+    SLICE_X17Y21         LUT6 (Prop_lut6_I0_O)        0.124     9.219 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2/O
+                         net (fo=16, routed)          1.209    10.428    u_core/u_issue/u_pipe_ctrl/result_q_reg[11]_0[2]
+    SLICE_X20Y24         LUT6 (Prop_lut6_I1_O)        0.124    10.552 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94/O
+                         net (fo=1, routed)           0.000    10.552    u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94_n_0
+    SLICE_X20Y24         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    10.928 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65/CO[3]
+                         net (fo=1, routed)           0.009    10.937    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65_n_0
+    SLICE_X20Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.054 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38/CO[3]
+                         net (fo=1, routed)           0.000    11.054    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38_n_0
+    SLICE_X20Y26         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229    11.283 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_23/CO[2]
+                         net (fo=2, routed)           0.772    12.054    u_core/u_issue/u_pipe_ctrl/u_exec/branch_taken_r0
+    SLICE_X22Y23         LUT6 (Prop_lut6_I4_O)        0.310    12.364 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_15/O
+                         net (fo=1, routed)           0.767    13.131    u_core/u_fetch/exception_e1_q[4]_i_3_1
+    SLICE_X29Y22         LUT6 (Prop_lut6_I2_O)        0.124    13.255 r  u_core/u_fetch/exception_e1_q[4]_i_3_comp_1/O
+                         net (fo=33, routed)          0.871    14.126    u_core/u_fetch/branch_d_exec_request_w
+    SLICE_X33Y21         LUT4 (Prop_lut4_I0_O)        0.124    14.250 r  u_core/u_fetch/branch_pc_q[29]_i_1/O
+                         net (fo=1, routed)           0.426    14.676    u_core/u_fetch/branch_pc_q[29]_i_1_n_0
+    SLICE_X31Y21         FDCE                                         r  u_core/u_fetch/branch_pc_q_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.559    11.559    
+                         clock pessimism              0.115    11.674    
+                         clock uncertainty           -0.035    11.639    
+    SLICE_X31Y21         FDCE (Setup_fdce_C_D)       -0.043    11.596    u_core/u_fetch/branch_pc_q_reg[29]
+  -------------------------------------------------------------------
+                         required time                         11.596    
+                         arrival time                         -14.676    
+  -------------------------------------------------------------------
+                         slack                                 -3.080    
+
+Slack (VIOLATED) :        -3.071ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_fetch/branch_pc_q_reg[28]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        13.000ns  (logic 4.805ns (36.962%)  route 8.195ns (63.038%))
+  Logic Levels:           12  (CARRY4=3 LUT3=1 LUT4=1 LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.559ns = ( 11.559 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.693ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.693     1.693    
+    RAMB36_X2Y5          RAMB36E1                     0.000     1.693 r  u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+    RAMB36_X2Y5          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.147 r  u_tcm/u_ram/ram_reg_2_0/DOBDO[1]
+                         net (fo=1, routed)           0.947     5.095    u_core/u_fetch/ram_read0_q[17]
+    SLICE_X31Y20         LUT3 (Prop_lut3_I1_O)        0.124     5.219 r  u_core/u_fetch/rd_result_e1_q[17]_i_2/O
+                         net (fo=145, routed)         1.179     6.397    u_core/u_issue/u_regfile/mem_data_wr_q[24]_i_5[1]
+    SLICE_X32Y28         MUXF7 (Prop_muxf7_S_O)       0.292     6.689 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7/O
+                         net (fo=1, routed)           0.000     6.689    u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7_n_0
+    SLICE_X32Y28         MUXF8 (Prop_muxf8_I1_O)      0.088     6.777 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_4/O
+                         net (fo=1, routed)           1.130     7.907    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2_0
+    SLICE_X26Y23         LUT5 (Prop_lut5_I2_O)        0.319     8.226 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3/O
+                         net (fo=1, routed)           0.869     9.095    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3_n_0
+    SLICE_X17Y21         LUT6 (Prop_lut6_I0_O)        0.124     9.219 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2/O
+                         net (fo=16, routed)          1.209    10.428    u_core/u_issue/u_pipe_ctrl/result_q_reg[11]_0[2]
+    SLICE_X20Y24         LUT6 (Prop_lut6_I1_O)        0.124    10.552 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94/O
+                         net (fo=1, routed)           0.000    10.552    u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94_n_0
+    SLICE_X20Y24         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    10.928 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65/CO[3]
+                         net (fo=1, routed)           0.009    10.937    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65_n_0
+    SLICE_X20Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.054 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38/CO[3]
+                         net (fo=1, routed)           0.000    11.054    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38_n_0
+    SLICE_X20Y26         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229    11.283 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_23/CO[2]
+                         net (fo=2, routed)           0.772    12.054    u_core/u_issue/u_pipe_ctrl/u_exec/branch_taken_r0
+    SLICE_X22Y23         LUT6 (Prop_lut6_I4_O)        0.310    12.364 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_15/O
+                         net (fo=1, routed)           0.767    13.131    u_core/u_fetch/exception_e1_q[4]_i_3_1
+    SLICE_X29Y22         LUT6 (Prop_lut6_I2_O)        0.124    13.255 r  u_core/u_fetch/exception_e1_q[4]_i_3_comp_1/O
+                         net (fo=33, routed)          0.889    14.144    u_core/u_fetch/branch_d_exec_request_w
+    SLICE_X33Y21         LUT4 (Prop_lut4_I0_O)        0.124    14.268 r  u_core/u_fetch/branch_pc_q[28]_i_1/O
+                         net (fo=1, routed)           0.425    14.693    u_core/u_fetch/branch_pc_q[28]_i_1_n_0
+    SLICE_X30Y21         FDCE                                         r  u_core/u_fetch/branch_pc_q_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.559    11.559    
+                         clock pessimism              0.115    11.674    
+                         clock uncertainty           -0.035    11.639    
+    SLICE_X30Y21         FDCE (Setup_fdce_C_D)       -0.016    11.623    u_core/u_fetch/branch_pc_q_reg[28]
+  -------------------------------------------------------------------
+                         required time                         11.623    
+                         arrival time                         -14.693    
+  -------------------------------------------------------------------
+                         slack                                 -3.071    
+
+Slack (VIOLATED) :        -3.045ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[26]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.940ns  (logic 4.851ns (37.489%)  route 8.089ns (62.511%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.342    13.626    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I3_O)        0.124    13.750 r  u_core/u_fetch/mem_wr_q[3]_i_2/O
+                         net (fo=12, routed)          0.851    14.600    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]_1
+    SLICE_X29Y9          LUT6 (Prop_lut6_I5_O)        0.124    14.724 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[26]_i_1/O
+                         net (fo=1, routed)           0.000    14.724    u_core/u_lsu/mem_data_wr_q_reg[31]_0[26]
+    SLICE_X29Y9          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X29Y9          FDCE (Setup_fdce_C_D)        0.031    11.680    u_core/u_lsu/mem_data_wr_q_reg[26]
+  -------------------------------------------------------------------
+                         required time                         11.680    
+                         arrival time                         -14.724    
+  -------------------------------------------------------------------
+                         slack                                 -3.045    
+
+Slack (VIOLATED) :        -3.026ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[13]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.921ns  (logic 4.851ns (37.544%)  route 8.070ns (62.456%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.568ns = ( 11.568 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.325    13.609    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.733 f  u_core/u_fetch/mem_wr_q[3]_i_4/O
+                         net (fo=11, routed)          0.849    14.581    u_core/u_issue/u_pipe_ctrl/u_lsu/mem_data_r112_out_alias
+    SLICE_X31Y11         LUT6 (Prop_lut6_I2_O)        0.124    14.705 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[13]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.705    u_core/u_lsu/mem_data_wr_q_reg[31]_0[13]
+    SLICE_X31Y11         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.568    11.568    
+                         clock pessimism              0.115    11.683    
+                         clock uncertainty           -0.035    11.648    
+    SLICE_X31Y11         FDCE (Setup_fdce_C_D)        0.032    11.680    u_core/u_lsu/mem_data_wr_q_reg[13]
+  -------------------------------------------------------------------
+                         required time                         11.680    
+                         arrival time                         -14.705    
+  -------------------------------------------------------------------
+                         slack                                 -3.026    
+
+Slack (VIOLATED) :        -3.024ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[9]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.969ns  (logic 4.851ns (37.405%)  route 8.118ns (62.595%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.325    13.609    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.733 f  u_core/u_fetch/mem_wr_q[3]_i_4/O
+                         net (fo=11, routed)          0.897    14.629    u_core/u_issue/u_pipe_ctrl/u_lsu/mem_data_r112_out_alias
+    SLICE_X30Y10         LUT6 (Prop_lut6_I2_O)        0.124    14.753 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[9]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.753    u_core/u_lsu/mem_data_wr_q_reg[31]_0[9]
+    SLICE_X30Y10         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X30Y10         FDCE (Setup_fdce_C_D)        0.081    11.730    u_core/u_lsu/mem_data_wr_q_reg[9]
+  -------------------------------------------------------------------
+                         required time                         11.730    
+                         arrival time                         -14.753    
+  -------------------------------------------------------------------
+                         slack                                 -3.024    
+
+Slack (VIOLATED) :        -3.019ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_mul/operand_b_e1_q_reg[31]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.605ns  (logic 4.227ns (33.533%)  route 8.378ns (66.467%))
+  Logic Levels:           12  (LUT2=1 LUT3=1 LUT5=2 LUT6=6 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.094ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.575ns = ( 11.575 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.466    11.012    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X27Y13         LUT5 (Prop_lut5_I1_O)        0.124    11.136 r  u_core/u_issue/u_pipe_ctrl/q_mask_q[31]_i_5/O
+                         net (fo=67, routed)          0.609    11.745    u_core/u_fetch/exec_opcode_valid_w
+    SLICE_X27Y16         LUT6 (Prop_lut6_I5_O)        0.124    11.869 r  u_core/u_fetch/operand_a_e1_q[32]_i_4/O
+                         net (fo=1, routed)           0.684    12.553    u_core/u_fetch/operand_a_e1_q[32]_i_4_n_0
+    SLICE_X23Y14         LUT6 (Prop_lut6_I5_O)        0.124    12.677 r  u_core/u_fetch/operand_a_e1_q[32]_i_2/O
+                         net (fo=67, routed)          1.224    13.900    u_core/u_fetch/operand_a_e1_q[32]_i_2_n_0
+    SLICE_X15Y15         LUT2 (Prop_lut2_I0_O)        0.154    14.054 r  u_core/u_fetch/operand_b_e1_q[31]_i_1/O
+                         net (fo=1, routed)           0.335    14.390    u_core/u_mul/operand_b_e1_q_reg[32]_0[31]
+    SLICE_X15Y14         FDCE                                         r  u_core/u_mul/operand_b_e1_q_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.575    11.575    
+                         clock pessimism              0.115    11.690    
+                         clock uncertainty           -0.035    11.655    
+    SLICE_X15Y14         FDCE (Setup_fdce_C_D)       -0.284    11.371    u_core/u_mul/operand_b_e1_q_reg[31]
+  -------------------------------------------------------------------
+                         required time                         11.371    
+                         arrival time                         -14.390    
+  -------------------------------------------------------------------
+                         slack                                 -3.019    
+
+Slack (VIOLATED) :        -3.010ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[31]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.906ns  (logic 4.851ns (37.587%)  route 8.055ns (62.413%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.570ns = ( 11.570 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.506    13.789    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y9          LUT6 (Prop_lut6_I4_O)        0.124    13.913 r  u_core/u_fetch/mem_data_wr_q[31]_i_2_comp/O
+                         net (fo=7, routed)           0.653    14.567    u_core/u_fetch/mem_wr_q_reg[3]_i_3_0
+    SLICE_X29Y8          LUT6 (Prop_lut6_I0_O)        0.124    14.691 r  u_core/u_fetch/mem_data_wr_q[31]_i_1/O
+                         net (fo=1, routed)           0.000    14.691    u_core/u_lsu/mem_data_wr_q_reg[31]_0[31]
+    SLICE_X29Y8          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.570    11.570    
+                         clock pessimism              0.115    11.685    
+                         clock uncertainty           -0.035    11.650    
+    SLICE_X29Y8          FDCE (Setup_fdce_C_D)        0.031    11.681    u_core/u_lsu/mem_data_wr_q_reg[31]
+  -------------------------------------------------------------------
+                         required time                         11.681    
+                         arrival time                         -14.691    
+  -------------------------------------------------------------------
+                         slack                                 -3.010    
+
+Slack (VIOLATED) :        -3.008ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[24]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.902ns  (logic 4.851ns (37.599%)  route 8.051ns (62.401%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.570ns = ( 11.570 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.506    13.789    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y9          LUT6 (Prop_lut6_I4_O)        0.124    13.913 r  u_core/u_fetch/mem_data_wr_q[31]_i_2_comp/O
+                         net (fo=7, routed)           0.649    14.563    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]
+    SLICE_X29Y8          LUT6 (Prop_lut6_I1_O)        0.124    14.687 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[24]_i_1/O
+                         net (fo=1, routed)           0.000    14.687    u_core/u_lsu/mem_data_wr_q_reg[31]_0[24]
+    SLICE_X29Y8          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.570    11.570    
+                         clock pessimism              0.115    11.685    
+                         clock uncertainty           -0.035    11.650    
+    SLICE_X29Y8          FDCE (Setup_fdce_C_D)        0.029    11.679    u_core/u_lsu/mem_data_wr_q_reg[24]
+  -------------------------------------------------------------------
+                         required time                         11.679    
+                         arrival time                         -14.687    
+  -------------------------------------------------------------------
+                         slack                                 -3.008    
+
+Slack (VIOLATED) :        -3.005ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[10]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.948ns  (logic 4.851ns (37.466%)  route 8.097ns (62.534%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.102ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.567ns = ( 11.567 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.345    13.629    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.753 f  u_core/u_fetch/mem_data_wr_q[23]_i_4/O
+                         net (fo=17, routed)          0.855    14.608    u_core/u_issue/u_pipe_ctrl/mem_data_r113_out
+    SLICE_X30Y12         LUT6 (Prop_lut6_I4_O)        0.124    14.732 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[10]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.732    u_core/u_lsu/mem_data_wr_q_reg[31]_0[10]
+    SLICE_X30Y12         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.567    11.567    
+                         clock pessimism              0.115    11.682    
+                         clock uncertainty           -0.035    11.647    
+    SLICE_X30Y12         FDCE (Setup_fdce_C_D)        0.081    11.728    u_core/u_lsu/mem_data_wr_q_reg[10]
+  -------------------------------------------------------------------
+                         required time                         11.728    
+                         arrival time                         -14.732    
+  -------------------------------------------------------------------
+                         slack                                 -3.005    
+
+Slack (VIOLATED) :        -2.998ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_fetch/branch_pc_q_reg[31]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.903ns  (logic 4.805ns (37.239%)  route 8.098ns (62.761%))
+  Logic Levels:           12  (CARRY4=3 LUT3=1 LUT4=1 LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.559ns = ( 11.559 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.693ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.693     1.693    
+    RAMB36_X2Y5          RAMB36E1                     0.000     1.693 r  u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+    RAMB36_X2Y5          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.147 r  u_tcm/u_ram/ram_reg_2_0/DOBDO[1]
+                         net (fo=1, routed)           0.947     5.095    u_core/u_fetch/ram_read0_q[17]
+    SLICE_X31Y20         LUT3 (Prop_lut3_I1_O)        0.124     5.219 r  u_core/u_fetch/rd_result_e1_q[17]_i_2/O
+                         net (fo=145, routed)         1.179     6.397    u_core/u_issue/u_regfile/mem_data_wr_q[24]_i_5[1]
+    SLICE_X32Y28         MUXF7 (Prop_muxf7_S_O)       0.292     6.689 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7/O
+                         net (fo=1, routed)           0.000     6.689    u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7_n_0
+    SLICE_X32Y28         MUXF8 (Prop_muxf8_I1_O)      0.088     6.777 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_4/O
+                         net (fo=1, routed)           1.130     7.907    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2_0
+    SLICE_X26Y23         LUT5 (Prop_lut5_I2_O)        0.319     8.226 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3/O
+                         net (fo=1, routed)           0.869     9.095    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3_n_0
+    SLICE_X17Y21         LUT6 (Prop_lut6_I0_O)        0.124     9.219 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2/O
+                         net (fo=16, routed)          1.209    10.428    u_core/u_issue/u_pipe_ctrl/result_q_reg[11]_0[2]
+    SLICE_X20Y24         LUT6 (Prop_lut6_I1_O)        0.124    10.552 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94/O
+                         net (fo=1, routed)           0.000    10.552    u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94_n_0
+    SLICE_X20Y24         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    10.928 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65/CO[3]
+                         net (fo=1, routed)           0.009    10.937    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65_n_0
+    SLICE_X20Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.054 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38/CO[3]
+                         net (fo=1, routed)           0.000    11.054    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38_n_0
+    SLICE_X20Y26         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229    11.283 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_23/CO[2]
+                         net (fo=2, routed)           0.772    12.054    u_core/u_issue/u_pipe_ctrl/u_exec/branch_taken_r0
+    SLICE_X22Y23         LUT6 (Prop_lut6_I4_O)        0.310    12.364 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_15/O
+                         net (fo=1, routed)           0.767    13.131    u_core/u_fetch/exception_e1_q[4]_i_3_1
+    SLICE_X29Y22         LUT6 (Prop_lut6_I2_O)        0.124    13.255 r  u_core/u_fetch/exception_e1_q[4]_i_3_comp_1/O
+                         net (fo=33, routed)          0.793    14.048    u_core/u_fetch/branch_d_exec_request_w
+    SLICE_X33Y21         LUT4 (Prop_lut4_I0_O)        0.124    14.172 r  u_core/u_fetch/branch_pc_q[31]_i_2/O
+                         net (fo=1, routed)           0.425    14.597    u_core/u_fetch/branch_pc_q[31]_i_2_n_0
+    SLICE_X31Y21         FDCE                                         r  u_core/u_fetch/branch_pc_q_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.559    11.559    
+                         clock pessimism              0.115    11.674    
+                         clock uncertainty           -0.035    11.639    
+    SLICE_X31Y21         FDCE (Setup_fdce_C_D)       -0.040    11.599    u_core/u_fetch/branch_pc_q_reg[31]
+  -------------------------------------------------------------------
+                         required time                         11.599    
+                         arrival time                         -14.597    
+  -------------------------------------------------------------------
+                         slack                                 -2.998    
+
+Slack (VIOLATED) :        -2.983ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[27]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.879ns  (logic 4.851ns (37.665%)  route 8.028ns (62.335%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.570ns = ( 11.570 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.342    13.626    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I3_O)        0.124    13.750 r  u_core/u_fetch/mem_wr_q[3]_i_2/O
+                         net (fo=12, routed)          0.790    14.540    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]_1
+    SLICE_X28Y8          LUT6 (Prop_lut6_I2_O)        0.124    14.664 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[27]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.664    u_core/u_lsu/mem_data_wr_q_reg[31]_0[27]
+    SLICE_X28Y8          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.570    11.570    
+                         clock pessimism              0.115    11.685    
+                         clock uncertainty           -0.035    11.650    
+    SLICE_X28Y8          FDCE (Setup_fdce_C_D)        0.031    11.681    u_core/u_lsu/mem_data_wr_q_reg[27]
+  -------------------------------------------------------------------
+                         required time                         11.681    
+                         arrival time                         -14.664    
+  -------------------------------------------------------------------
+                         slack                                 -2.983    
+
+Slack (VIOLATED) :        -2.972ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_fetch/branch_pc_q_reg[30]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.904ns  (logic 4.805ns (37.235%)  route 8.099ns (62.765%))
+  Logic Levels:           12  (CARRY4=3 LUT3=1 LUT4=1 LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.559ns = ( 11.559 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.693ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.693     1.693    
+    RAMB36_X2Y5          RAMB36E1                     0.000     1.693 r  u_tcm/u_ram/ram_reg_2_0/CLKBWRCLK
+    RAMB36_X2Y5          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.147 r  u_tcm/u_ram/ram_reg_2_0/DOBDO[1]
+                         net (fo=1, routed)           0.947     5.095    u_core/u_fetch/ram_read0_q[17]
+    SLICE_X31Y20         LUT3 (Prop_lut3_I1_O)        0.124     5.219 r  u_core/u_fetch/rd_result_e1_q[17]_i_2/O
+                         net (fo=145, routed)         1.179     6.397    u_core/u_issue/u_regfile/mem_data_wr_q[24]_i_5[1]
+    SLICE_X32Y28         MUXF7 (Prop_muxf7_S_O)       0.292     6.689 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7/O
+                         net (fo=1, routed)           0.000     6.689    u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_7_n_0
+    SLICE_X32Y28         MUXF8 (Prop_muxf8_I1_O)      0.088     6.777 r  u_core/u_issue/u_regfile/csr_wdata_e1_q_reg[10]_i_4/O
+                         net (fo=1, routed)           1.130     7.907    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2_0
+    SLICE_X26Y23         LUT5 (Prop_lut5_I2_O)        0.319     8.226 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3/O
+                         net (fo=1, routed)           0.869     9.095    u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_3_n_0
+    SLICE_X17Y21         LUT6 (Prop_lut6_I0_O)        0.124     9.219 r  u_core/u_issue/u_pipe_ctrl/csr_wdata_e1_q[10]_i_2/O
+                         net (fo=16, routed)          1.209    10.428    u_core/u_issue/u_pipe_ctrl/result_q_reg[11]_0[2]
+    SLICE_X20Y24         LUT6 (Prop_lut6_I1_O)        0.124    10.552 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94/O
+                         net (fo=1, routed)           0.000    10.552    u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_94_n_0
+    SLICE_X20Y24         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    10.928 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65/CO[3]
+                         net (fo=1, routed)           0.009    10.937    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_65_n_0
+    SLICE_X20Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.054 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38/CO[3]
+                         net (fo=1, routed)           0.000    11.054    u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_38_n_0
+    SLICE_X20Y26         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229    11.283 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q_reg[4]_i_23/CO[2]
+                         net (fo=2, routed)           0.772    12.054    u_core/u_issue/u_pipe_ctrl/u_exec/branch_taken_r0
+    SLICE_X22Y23         LUT6 (Prop_lut6_I4_O)        0.310    12.364 r  u_core/u_issue/u_pipe_ctrl/exception_e1_q[4]_i_15/O
+                         net (fo=1, routed)           0.767    13.131    u_core/u_fetch/exception_e1_q[4]_i_3_1
+    SLICE_X29Y22         LUT6 (Prop_lut6_I2_O)        0.124    13.255 r  u_core/u_fetch/exception_e1_q[4]_i_3_comp_1/O
+                         net (fo=33, routed)          0.794    14.049    u_core/u_fetch/branch_d_exec_request_w
+    SLICE_X33Y21         LUT4 (Prop_lut4_I0_O)        0.124    14.173 r  u_core/u_fetch/branch_pc_q[30]_i_1/O
+                         net (fo=1, routed)           0.425    14.598    u_core/u_fetch/branch_pc_q[30]_i_1_n_0
+    SLICE_X30Y21         FDCE                                         r  u_core/u_fetch/branch_pc_q_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.559    11.559    
+                         clock pessimism              0.115    11.674    
+                         clock uncertainty           -0.035    11.639    
+    SLICE_X30Y21         FDCE (Setup_fdce_C_D)       -0.013    11.626    u_core/u_fetch/branch_pc_q_reg[30]
+  -------------------------------------------------------------------
+                         required time                         11.626    
+                         arrival time                         -14.598    
+  -------------------------------------------------------------------
+                         slack                                 -2.972    
+
+Slack (VIOLATED) :        -2.950ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[17]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.891ns  (logic 4.851ns (37.630%)  route 8.040ns (62.370%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.345    13.629    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.753 r  u_core/u_fetch/mem_data_wr_q[23]_i_4/O
+                         net (fo=17, routed)          0.799    14.552    u_core/u_issue/u_pipe_ctrl/mem_data_r113_out
+    SLICE_X30Y9          LUT6 (Prop_lut6_I4_O)        0.124    14.676 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[17]_i_1/O
+                         net (fo=1, routed)           0.000    14.676    u_core/u_lsu/mem_data_wr_q_reg[31]_0[17]
+    SLICE_X30Y9          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X30Y9          FDCE (Setup_fdce_C_D)        0.077    11.726    u_core/u_lsu/mem_data_wr_q_reg[17]
+  -------------------------------------------------------------------
+                         required time                         11.726    
+                         arrival time                         -14.676    
+  -------------------------------------------------------------------
+                         slack                                 -2.950    
+
+Slack (VIOLATED) :        -2.941ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[29]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.837ns  (logic 4.851ns (37.788%)  route 7.986ns (62.212%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.570ns = ( 11.570 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.342    13.626    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I3_O)        0.124    13.750 r  u_core/u_fetch/mem_wr_q[3]_i_2/O
+                         net (fo=12, routed)          0.748    14.498    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]_1
+    SLICE_X31Y8          LUT6 (Prop_lut6_I5_O)        0.124    14.622 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[29]_i_1/O
+                         net (fo=1, routed)           0.000    14.622    u_core/u_lsu/mem_data_wr_q_reg[31]_0[29]
+    SLICE_X31Y8          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.570    11.570    
+                         clock pessimism              0.115    11.685    
+                         clock uncertainty           -0.035    11.650    
+    SLICE_X31Y8          FDCE (Setup_fdce_C_D)        0.031    11.681    u_core/u_lsu/mem_data_wr_q_reg[29]
+  -------------------------------------------------------------------
+                         required time                         11.681    
+                         arrival time                         -14.622    
+  -------------------------------------------------------------------
+                         slack                                 -2.941    
+
+Slack (VIOLATED) :        -2.940ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[28]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.836ns  (logic 4.851ns (37.791%)  route 7.985ns (62.209%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.342    13.626    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I3_O)        0.124    13.750 r  u_core/u_fetch/mem_wr_q[3]_i_2/O
+                         net (fo=12, routed)          0.747    14.497    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]_1
+    SLICE_X31Y9          LUT6 (Prop_lut6_I5_O)        0.124    14.621 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[28]_i_1/O
+                         net (fo=1, routed)           0.000    14.621    u_core/u_lsu/mem_data_wr_q_reg[31]_0[28]
+    SLICE_X31Y9          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X31Y9          FDCE (Setup_fdce_C_D)        0.032    11.681    u_core/u_lsu/mem_data_wr_q_reg[28]
+  -------------------------------------------------------------------
+                         required time                         11.681    
+                         arrival time                         -14.621    
+  -------------------------------------------------------------------
+                         slack                                 -2.940    
+
+Slack (VIOLATED) :        -2.919ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[15]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.862ns  (logic 4.851ns (37.717%)  route 8.011ns (62.283%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.325    13.609    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.733 f  u_core/u_fetch/mem_wr_q[3]_i_4/O
+                         net (fo=11, routed)          0.789    14.522    u_core/u_issue/u_pipe_ctrl/u_lsu/mem_data_r112_out_alias
+    SLICE_X30Y10         LUT6 (Prop_lut6_I2_O)        0.124    14.646 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[15]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.646    u_core/u_lsu/mem_data_wr_q_reg[31]_0[15]
+    SLICE_X30Y10         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X30Y10         FDCE (Setup_fdce_C_D)        0.079    11.728    u_core/u_lsu/mem_data_wr_q_reg[15]
+  -------------------------------------------------------------------
+                         required time                         11.728    
+                         arrival time                         -14.646    
+  -------------------------------------------------------------------
+                         slack                                 -2.919    
+
+Slack (VIOLATED) :        -2.886ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[18]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.779ns  (logic 4.851ns (37.961%)  route 7.928ns (62.039%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.322    13.606    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y10         LUT6 (Prop_lut6_I1_O)        0.124    13.730 r  u_core/u_fetch/mem_wr_q[2]_i_2/O
+                         net (fo=9, routed)           0.710    14.440    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[23]_0
+    SLICE_X28Y10         LUT6 (Prop_lut6_I5_O)        0.124    14.564 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[18]_i_1/O
+                         net (fo=1, routed)           0.000    14.564    u_core/u_lsu/mem_data_wr_q_reg[31]_0[18]
+    SLICE_X28Y10         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X28Y10         FDCE (Setup_fdce_C_D)        0.029    11.678    u_core/u_lsu/mem_data_wr_q_reg[18]
+  -------------------------------------------------------------------
+                         required time                         11.678    
+                         arrival time                         -14.564    
+  -------------------------------------------------------------------
+                         slack                                 -2.886    
+
+Slack (VIOLATED) :        -2.880ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[30]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.775ns  (logic 4.851ns (37.973%)  route 7.924ns (62.027%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 f  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 f  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.342    13.626    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X28Y11         LUT6 (Prop_lut6_I3_O)        0.124    13.750 r  u_core/u_fetch/mem_wr_q[3]_i_2/O
+                         net (fo=12, routed)          0.685    14.435    u_core/u_issue/u_pipe_ctrl/mem_data_wr_q_reg[30]_1
+    SLICE_X28Y9          LUT6 (Prop_lut6_I5_O)        0.124    14.559 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[30]_i_1/O
+                         net (fo=1, routed)           0.000    14.559    u_core/u_lsu/mem_data_wr_q_reg[31]_0[30]
+    SLICE_X28Y9          FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X28Y9          FDCE (Setup_fdce_C_D)        0.031    11.680    u_core/u_lsu/mem_data_wr_q_reg[30]
+  -------------------------------------------------------------------
+                         required time                         11.680    
+                         arrival time                         -14.559    
+  -------------------------------------------------------------------
+                         slack                                 -2.880    
+
+Slack (VIOLATED) :        -2.869ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.763ns  (logic 4.851ns (38.009%)  route 7.912ns (61.991%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.568ns = ( 11.568 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.325    13.609    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.733 f  u_core/u_fetch/mem_wr_q[3]_i_4/O
+                         net (fo=11, routed)          0.691    14.423    u_core/u_issue/u_pipe_ctrl/u_lsu/mem_data_r112_out_alias
+    SLICE_X31Y11         LUT6 (Prop_lut6_I3_O)        0.124    14.547 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[8]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.547    u_core/u_lsu/mem_data_wr_q_reg[31]_0[8]
+    SLICE_X31Y11         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.568    11.568    
+                         clock pessimism              0.115    11.683    
+                         clock uncertainty           -0.035    11.648    
+    SLICE_X31Y11         FDCE (Setup_fdce_C_D)        0.031    11.679    u_core/u_lsu/mem_data_wr_q_reg[8]
+  -------------------------------------------------------------------
+                         required time                         11.679    
+                         arrival time                         -14.547    
+  -------------------------------------------------------------------
+                         slack                                 -2.869    
+
+Slack (VIOLATED) :        -2.856ns  (required time - arrival time)
+  Source:                 u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_core/u_lsu/mem_data_wr_q_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by clk_i  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_i
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_i rise@10.000ns - clk_i rise@0.000ns)
+  Data Path Delay:        12.749ns  (logic 4.851ns (38.051%)  route 7.898ns (61.949%))
+  Logic Levels:           15  (CARRY4=1 LUT3=1 LUT5=1 LUT6=10 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.569ns = ( 11.569 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.784ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_i rise edge)      0.000     0.000 r  
+                         propagated clock network latency
+                                                      1.784     1.784    
+    RAMB36_X0Y4          RAMB36E1                     0.000     1.784 r  u_tcm/u_ram/ram_reg_1_1/CLKBWRCLK
+    RAMB36_X0Y4          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     4.238 r  u_tcm/u_ram/ram_reg_1_1/DOBDO[1]
+                         net (fo=6, routed)           1.409     5.648    u_core/u_fetch/ram_read0_q[11]
+    SLICE_X26Y9          LUT3 (Prop_lut3_I1_O)        0.124     5.772 r  u_core/u_fetch/mem_addr_q[7]_i_10/O
+                         net (fo=3, routed)           0.969     6.740    u_core/u_fetch/skid_buffer_q_reg[24]_0[5]
+    SLICE_X27Y12         LUT6 (Prop_lut6_I4_O)        0.124     6.864 r  u_core/u_fetch/take_interrupt_q_i_10/O
+                         net (fo=2, routed)           0.573     7.437    u_core/u_fetch/take_interrupt_q_i_10_n_0
+    SLICE_X24Y11         LUT5 (Prop_lut5_I0_O)        0.124     7.561 r  u_core/u_fetch/take_interrupt_q_i_4/O
+                         net (fo=2, routed)           0.648     8.210    u_core/u_fetch/take_interrupt_q_i_4_n_0
+    SLICE_X25Y10         LUT6 (Prop_lut6_I4_O)        0.124     8.334 f  u_core/u_fetch/rd_valid_e1_q_i_94/O
+                         net (fo=48, routed)          0.822     9.155    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_35_0
+    SLICE_X25Y14         LUT6 (Prop_lut6_I3_O)        0.124     9.279 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72/O
+                         net (fo=1, routed)           0.000     9.279    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_72_n_0
+    SLICE_X25Y14         MUXF7 (Prop_muxf7_I1_O)      0.217     9.496 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34/O
+                         net (fo=1, routed)           0.000     9.496    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_34_n_0
+    SLICE_X25Y14         MUXF8 (Prop_muxf8_I1_O)      0.094     9.590 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15/O
+                         net (fo=1, routed)           0.640    10.230    u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_reg_i_15_n_0
+    SLICE_X25Y13         LUT6 (Prop_lut6_I3_O)        0.316    10.546 f  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_7/O
+                         net (fo=4, routed)           0.675    11.221    u_core/u_issue/u_pipe_ctrl/opcode_issue_r4
+    SLICE_X28Y13         LUT6 (Prop_lut6_I3_O)        0.124    11.345 r  u_core/u_issue/u_pipe_ctrl/rd_valid_e1_q_i_3/O
+                         net (fo=29, routed)          0.379    11.724    u_core/u_fetch/lsu_opcode_valid_w
+    SLICE_X28Y13         LUT6 (Prop_lut6_I5_O)        0.124    11.848 r  u_core/u_fetch/mem_rd_q_i_4/O
+                         net (fo=9, routed)           0.352    12.200    u_core/u_fetch/mem_rd_q_i_4_n_0
+    SLICE_X29Y12         LUT6 (Prop_lut6_I4_O)        0.124    12.324 r  u_core/u_fetch/mem_wr_q[3]_i_8_comp/O
+                         net (fo=1, routed)           0.000    12.324    u_core/u_fetch/mem_wr_q[3]_i_8_n_0
+    SLICE_X29Y12         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    12.551 r  u_core/u_fetch/mem_wr_q_reg[3]_i_3/O[1]
+                         net (fo=20, routed)          0.429    12.981    u_core/u_fetch/O[1]
+    SLICE_X28Y12         LUT6 (Prop_lut6_I0_O)        0.303    13.284 r  u_core/u_fetch/mem_rd_q_i_3/O
+                         net (fo=8, routed)           0.325    13.609    u_core/u_fetch/mem_rd_q_i_3_n_0
+    SLICE_X29Y11         LUT6 (Prop_lut6_I1_O)        0.124    13.733 f  u_core/u_fetch/mem_wr_q[3]_i_4/O
+                         net (fo=11, routed)          0.677    14.409    u_core/u_issue/u_pipe_ctrl/u_lsu/mem_data_r112_out_alias
+    SLICE_X31Y10         LUT6 (Prop_lut6_I2_O)        0.124    14.533 r  u_core/u_issue/u_pipe_ctrl/mem_data_wr_q[12]_i_1_comp/O
+                         net (fo=1, routed)           0.000    14.533    u_core/u_lsu/mem_data_wr_q_reg[31]_0[12]
+    SLICE_X31Y10         FDCE                                         r  u_core/u_lsu/mem_data_wr_q_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_i rise edge)     10.000    10.000 r  
+                         propagated clock network latency
+                                                      1.569    11.569    
+                         clock pessimism              0.115    11.684    
+                         clock uncertainty           -0.035    11.649    
+    SLICE_X31Y10         FDCE (Setup_fdce_C_D)        0.029    11.678    u_core/u_lsu/mem_data_wr_q_reg[12]
+  -------------------------------------------------------------------
+                         required time                         11.678    
+                         arrival time                         -14.533    
+  -------------------------------------------------------------------
+                         slack                                 -2.856    
+
+
+
+

@@ -1,0 +1,150 @@
+# Manual review diff / change manifest
+#
+# This workspace is not a Git checkout.  The following is a concise semantic
+# diff against D:/code/FPGA/runs/ultra-top-tcm, not a machine-applicable patch.
+# Generated Verilator objects, CoreMark .map/.dis files, signatures, DCPs and
+# Vivado reports are intentionally omitted from the source change list.
+
+--- baseline/core/riscv/riscv_branch_predict.v
++++ isolated/core/riscv/riscv_branch_predict.v
+@@ new module @@
++ Added parameterized, generate-disabled direct-mapped predictor.
++ Default CPU integration: SUPPORT_BRANCH_PREDICTION=0,
++ BRANCH_PREDICTOR_INDEX_W=6; enabled table has 64 entries and 24-bit tag.
++ Lookup index = lookup_pc_i[INDEX_W+1:2].
++ Tag = lookup_pc_i[31:INDEX_W+2], with valid && full-tag comparison.
++ Conditional branch direction uses BHT[1]; JAL uses is_jal => taken.
++ Target/tag/BHT/is_jal fields use explicit RAM64X1D instances for
++ asynchronous lookup and synchronous update; valid bits are resettable FF.
++ Reset/FENCE.I clear valid only. Replacement reseeds BHT from the resolved
++ outcome; hit updates saturate at 00/11. No update-to-lookup bypass.
++ JALR/RET are excluded by the execute-side update-valid contract.
+
+--- baseline/core/riscv/riscv_fetch.v
++++ isolated/core/riscv/riscv_fetch.v
+@@ ports and fetch metadata @@
++ Added prediction_taken_i/prediction_target_i inputs and prediction_pc_o /
++ fetch_pred_taken_o outputs.
++ Predictor target is selected only at the registered fetch-PC next-PC mux;
++ redirect request retains priority and sequential PC+4 remains the default.
++ Captured pred_taken is paired with pc_d_q on accepted instruction requests.
++ Skid buffer widened from 66 to 67 bits to carry pred_taken atomically with
++ faults, PC and instruction. Existing accept/stall/response-drop behavior is
++ retained.
+
+--- baseline/core/riscv/riscv_decode.v
++++ isolated/core/riscv/riscv_decode.v
+@@ decode payload @@
++ Added one prediction metadata bit to the decode interface and optional
++ extra-decode buffer. EXTRA_DECODE_STAGE=1 captures it with valid/fault/PC/
++ instruction; EXTRA_DECODE_STAGE=0 passes it through.
+
+--- baseline/core/riscv/riscv_issue.v
++++ isolated/core/riscv/riscv_issue.v
+@@ execute and redirect interface @@
++ Added fetch_pred_taken_i and opcode_pred_taken_o.
++ Added branch_d_exec_taken_i, branch_d_exec_mispredict_i and
++ branch_d_exec_correction_pc_i inputs.
++ branch_request_o = branch_csr_request_i | branch_d_exec_mispredict_i;
++ CSR/trap redirect remains the priority source for branch_pc_o/priv.
++ The existing issue/pipe-control branch-taken and branch-target meanings are
++ preserved; correctly predicted direct branches do not request a squash.
+
+--- baseline/core/riscv/riscv_exec.v
++++ isolated/core/riscv/riscv_exec.v
+@@ branch result split and update record @@
++ Added opcode_pred_taken_i.
++ Split actual-taken/target from front-end mispredict/correction outputs.
++ Correction is actual target for predicted-NT/actual-T and PC+4 for
++ predicted-T/actual-NT; direct JAL misses only when not predicted.
++ JALR/RET always retain the existing execution redirect and do not train the
++ first-version predictor.
++ Added a registered valid resolved update record carrying PC, target, JAL,
++ taken, prediction and mispredict information. Invalid, interrupted and
++ taken-misaligned direct instructions are excluded from update.
++ Added registered resolved-category observation signals for simulation stats.
+
+--- baseline/core/riscv/riscv_core.v
++++ isolated/core/riscv/riscv_core.v
+@@ parameters and wiring @@
++ Added SUPPORT_BRANCH_PREDICTION=0 and BRANCH_PREDICTOR_INDEX_W=6 parameters.
++ Added u_branch_predict between fetch-PC lookup and execute update record.
++ Connected FENCE.I valid invalidation, predictor lookup and update ports.
++ Connected prediction metadata through fetch/decode/issue/execute and the
++ split mispredict redirect interface.
++ Added ULTRA_PERF_COUNTERS simulation observers and Verilator-public readers;
++ these are not present in normal Vivado synthesis.
+
+--- baseline/top_tcm_axi/src_v/riscv_tcm_top.v
++++ isolated/top_tcm_axi/src_v/riscv_tcm_top.v
+@@ top-level parameters @@
++ Added and forwarded SUPPORT_BRANCH_PREDICTION=0 and
++ BRANCH_PREDICTOR_INDEX_W=6 to riscv_core.
+
+--- baseline/isa_sim/cosim_api.h
++++ isolated/isa_sim/cosim_api.h
+@@ simulation hook @@
++ Added virtual report_stats() hook and cosim report_stats() dispatcher.
+
+--- baseline/isa_sim/cosim_api.cpp
++++ isolated/isa_sim/cosim_api.cpp
+@@ simulation hook @@
++ Forwarded report_stats() to attached CPU models.
+
+--- baseline/isa_sim/riscv_main.cpp
++++ isolated/isa_sim/riscv_main.cpp
+@@ simulation completion @@
++ Called sim->report_stats() immediately before cosim at_exit(), so counters
++ are sampled before the Verilator/SystemC testbench terminates.
+
+--- baseline/top_tcm_axi/tb/testbench.h
++++ isolated/top_tcm_axi/tb/testbench.h
+@@ statistics and completion @@
++ Added output of branch resolved/category, BTB hit/miss, predicted-taken,
++ correct and mispredict counters. Existing testbench execution and exit path
++ remain unchanged.
+
+--- baseline/sim/branch_predictor/
++++ isolated/sim/branch_predictor/
+@@ directed verification @@
++ Added self-checking predictor unit test covering reset, allocation,
++ saturation, replacement/full tag, JAL, FENCE.I, same-cycle no-bypass and
++ disabled outputs.
++ Added branch_redirect_test.S/.ld/.elf covering all six conditional forms,
++ direct JAL, JALR/RET, FENCE.I, illegal instruction, software interrupt and
++ pass/fail checkpoints.
+
+--- baseline/vivado/ultra_scalar_top_tcm_xc7z020/
++++ isolated/vivado/ultra_scalar_bht_btb_xc7z020/
+@@ isolated flow and parameter sweep @@
++ Adapted create_project.tcl, synth.tcl and implement_ooc.tcl to read only
++ runs/ultra-top-tcm-bht-btb.
++ Added A0/A1/D0/D1 sweep: A0=(ED0,RF0,P0), A1=(ED0,RF0,P1),
++ D0=(ED1,RF1,P0), D1=(ED1,RF1,P1), with INDEX_W=6.
++ Sweep runs the same OOC synth/opt/place/phys_opt/route flow and emits
++ utilization, hierarchical utilization, timing, critical-path, logic-level,
++ methodology, DRC and routed-DCP artifacts per configuration.
+
+--- baseline/docs/
++++ isolated/docs/
+@@ design contract and traceability @@
++ Added branch_predictor_microarchitecture.md with ports, table format,
++ timing, metadata alignment, redirect priority, reset/FENCE.I and checks.
++ Added branch_predictor_porting_notes.md tracing kas030 table/BHT behavior,
++ kas030 redirect semantics and biRISC-V metadata/silent-correction patterns,
++ while documenting Ultra-specific mechanical adaptations.
+
+--- baseline/reports/
++++ isolated/reports/
+@@ final evidence @@
++ Added branch_predictor_verification.md and branch_predictor_coremark_ppa.md
++ with commands, tool versions, test outcomes, CoreMark counters, CRC,
++ predictor-off equivalence, Vivado post-route resources/timing, target
++ evaluation, unexecuted checks and residual risks.
++ Added this manual review diff.
+
+# Explicitly unchanged by this experiment:
+# CoreMark source, compiler options/linker script, LSU, TCM/AXI, forwarding,
+# scoreboard policy, branch comparator, multiply/divide, pipeline count,
+# EXTRA_DECODE_STAGE semantics, SUPPORT_REGFILE_XILINX semantics, cache/RAS/
+# GShare/second issue slot.
