@@ -1,0 +1,23 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+BOUNDED_DIAG progress cycle=1 sim_time=30 ns retired=0 last_commit_pc=0x00000000 iter_entries=0 stall=0 early_live=0 early_hold=0 normal_pending=0 request=0 accept=0 ack=0
+BOUNDED_DIAG exit=stop_pc steps=148 last_pc=0x00002114 stop_pc=0x00002114 fault=0 stopped=0
+BOUNDED_DIAG enabled interval=100000
+Memory: 0x2000 - 0x213b (Size=0KB) [.text]
+Memory: 0x213c - 0x2143 (Size=0KB) [.data]
+Memory: 0xe000 - 0xe01f (Size=0KB) [.signature]
+Starting from 0x00002000
+branch_resolved       : 16
+branch_conditional    : 14
+branch_jal            : 2
+branch_jalr_ret       : 0
+branch_btb_hit        : 1
+branch_btb_miss       : 15
+branch_pred_taken     : 1
+branch_correct        : 13
+branch_mispredict     : 3
+Dumping post simulation memory: 0x0000e000-0x0000e020 (32 bytes) [/work/ultra_simd_subset_v1/build/results/all/integration.signature.bin]
+TB: Aborted at 1500 ns
+SIM_EXIT=0 STOP_PC=0x00002114 MODEL=ALL

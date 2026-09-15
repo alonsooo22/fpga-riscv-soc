@@ -1,0 +1,21 @@
+D:\code\FPGA\vivado\ultra_bht_btb_followup\sim\ultra_simd_subset_v1\coremark_followup\EDAP2\build\coremark.elf  :
+section               size    addr
+.text                36944    8192
+.rodata               3016   45136
+.data                    8   48152
+.bss                  2392   48160
+.signature            4096   57344
+.debug_info          22085       0
+.debug_abbrev         3241       0
+.debug_loclists      47853       0
+.debug_aranges         112       0
+.debug_rnglists       4486       0
+.debug_line          65482       0
+.debug_str            3223       0
+.debug_line_str       1073       0
+.comment                51       0
+.riscv.attributes       55       0
+.debug_frame           700       0
+Total               194817
+
+

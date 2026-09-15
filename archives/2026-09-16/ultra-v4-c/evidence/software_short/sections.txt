@@ -1,0 +1,13 @@
+COMMAND: D:\code\FPGA\toolchains\xpack-riscv-none-elf-gcc-15.2.0-1\bin\riscv-none-elf-size.exe -A D:\code\FPGA\vivado\ultra_bht_btb_followup\sim\compiler_screen_20260915\build\short\C\coremark.elf
+D:\code\FPGA\vivado\ultra_bht_btb_followup\sim\compiler_screen_20260915\build\short\C\coremark.elf  :
+section              size    addr
+.text               34792    8192
+.rodata              3016   42984
+.data                   8   46000
+.bss                 2104   46008
+.signature           4096   57344
+.comment               51       0
+.riscv.attributes      55       0
+Total               44122
+
+

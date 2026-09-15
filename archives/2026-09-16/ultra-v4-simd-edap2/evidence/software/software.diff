@@ -1,0 +1,92 @@
+--- original/core_matrix.c
++++ EDAP2/core_matrix.c
+@@ -17,6 +17,7 @@
+ */
+ 
+ #include "coremark.h"
++#include "xsimd.h"
+ /*
+ Topic: Description
+         Matrix manipulation benchmark
+@@ -46,7 +47,7 @@
+ #define matrix_test_next(x)      (x + 1)
+ #define matrix_clip(x, y)        ((y) ? (x)&0x0ff : (x)&0x0ffff)
+ #define matrix_big(x)            (0xf000 | (x))
+-#define bit_extract(x, from, to) (((x) >> (from)) & (~(0xffffffff << (to))))
++#define bit_extract(x, from, to) xs_extract((x),(from),(to))
+ 
+ #if CORE_DEBUG
+ void
+@@ -82,6 +83,10 @@
+     }
+ }
+ #endif
++// Fresh per-call packing; 288 B; no reuse across mutable inputs.
++static ee_u32 simd_ap[9][4], simd_bp[9][4];
++typedef ee_u32 simd_alias32 __attribute__((may_alias));
++
+ /* Function: core_bench_matrix
+         Benchmark function
+ 
+@@ -284,14 +289,11 @@
+ void
+ matrix_add_const(ee_u32 N, MATDAT *A, MATDAT val)
+ {
+-    ee_u32 i, j;
+-    for (i = 0; i < N; i++)
+-    {
+-        for (j = 0; j < N; j++)
+-        {
+-            A[i * N + j] += val;
+-        }
+-    }
++    ee_u32 count=N*N, i=0;
++    if (count && ((ee_ptr_int)A & 3u)) { A[0]+=val; i=1; }
++    ee_u32 vv=xs_pack((ee_u16)val,(ee_u16)val);
++    for (;i+1<count;i+=2) { simd_alias32 *p=(simd_alias32 *)(A+i); *p=xs_add(*p,vv); }
++    if(i<count) A[i]+=val;
+ }
+ 
+ /* Function: matrix_mul_vect
+@@ -321,17 +323,31 @@
+ void
+ matrix_mul_matrix(ee_u32 N, MATRES *C, MATDAT *A, MATDAT *B)
+ {
+-    ee_u32 i, j, k;
+-    for (i = 0; i < N; i++)
+-    {
+-        for (j = 0; j < N; j++)
+-        {
+-            C[i * N + j] = 0;
+-            for (k = 0; k < N; k++)
+-            {
+-                C[i * N + j] += (MATRES)A[i * N + k] * (MATRES)B[k * N + j];
++    if(N!=9) {
++        for(ee_u32 i=0;i<N;i++)for(ee_u32 j=0;j<N;j++){
++            ee_u32 s=0;for(ee_u32 k=0;k<N;k++)s+=(ee_u32)((MATRES)A[i*N+k]*(MATRES)B[k*N+j]);C[i*N+j]=(MATRES)s;
++        } return;
++    }
++    for(ee_u32 i=0;i<9;i++)for(ee_u32 k=0;k<4;k++){
++        simd_ap[i][k]=xs_pack((ee_u16)A[i*9+2*k],(ee_u16)A[i*9+2*k+1]);
++        simd_bp[i][k]=xs_pack((ee_u16)B[2*k*9+i],(ee_u16)B[(2*k+1)*9+i]);
++    }
++    for(ee_u32 i=0;i<9;i++){
++        ee_u32 j=0;
++        for(;j+1<9;j+=2){
++            ee_u32 s0=0,s1=0;
++            for(ee_u32 k=0;k<4;k++){
++                ee_u32 pa=simd_ap[i][k];
++                s0+=xs_dot(pa,simd_bp[j][k]);
++                s1+=xs_dot(pa,simd_bp[j+1][k]);
+             }
+-        }
++            MATRES tail=A[i*9+8];
++            s0+=(ee_u32)(tail*(MATRES)B[8*9+j]);
++            s1+=(ee_u32)(tail*(MATRES)B[8*9+j+1]);
++            C[i*9+j]=(MATRES)s0; C[i*9+j+1]=(MATRES)s1;
++        }
++        ee_u32 s=0;for(ee_u32 k=0;k<4;k++)s+=xs_dot(simd_ap[i][k],simd_bp[j][k]);
++        s+=(ee_u32)((MATRES)A[i*9+8]*(MATRES)B[8*9+j]);C[i*9+j]=(MATRES)s;
+     }
+ }
+ 

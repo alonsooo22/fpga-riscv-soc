@@ -1,0 +1,21 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+Memory: 0x2000 - 0xb04f (Size=36KB) [.text]
+Memory: 0xb050 - 0xbc17 (Size=2KB) [.rodata]
+Memory: 0xbc18 - 0xbc1f (Size=0KB) [.data]
+Memory: 0xbc20 - 0xc577 (Size=2KB) [.bss]
+Memory: 0xe000 - 0xefff (Size=4KB) [.signature]
+Starting from 0x00002000
+branch_resolved       : 867054
+branch_conditional    : 768743
+branch_jal            : 78228
+branch_jalr_ret       : 20083
+branch_btb_hit        : 771286
+branch_btb_miss       : 75685
+branch_pred_taken     : 411133
+branch_correct        : 762106
+branch_mispredict     : 84865
+Dumping post simulation memory: 0x0000e000-0x0000f000 (4096 bytes) [signature.bin]
+TB: Aborted at 48515050 ns

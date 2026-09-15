@@ -1,0 +1,29 @@
+{
+  "opcode": 11,
+  "instructions": [
+    {
+      "name": "XBEXTU",
+      "funct3": 0,
+      "mask": 3221254271,
+      "match": 11
+    },
+    {
+      "name": "XPACK16",
+      "funct3": 1,
+      "mask": 4261441663,
+      "match": 4107
+    },
+    {
+      "name": "XDOT2H",
+      "funct3": 2,
+      "mask": 4261441663,
+      "match": 8203
+    },
+    {
+      "name": "XADD16",
+      "funct3": 3,
+      "mask": 4261441663,
+      "match": 12299
+    }
+  ]
+}

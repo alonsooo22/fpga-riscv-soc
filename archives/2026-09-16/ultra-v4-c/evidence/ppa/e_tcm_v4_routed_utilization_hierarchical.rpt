@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sun Sep 13 21:19:45 2026
+| Host         : LAPTOP-A7P3RQOS running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file D:/code/FPGA/vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_utilization_hierarchical.rpt
+| Design       : riscv_tcm_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------+------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|               Instance              |               Module               | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------------------------+------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| riscv_tcm_top                       |                              (top) |       3689 |       3320 |     369 |    0 | 1910 |     16 |      0 |          4 |
+|   (riscv_tcm_top)                   |                              (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   u_axi                             |                          dport_axi |         45 |         45 |       0 |    0 |  143 |      0 |      0 |          0 |
+|     (u_axi)                         |                          dport_axi |          0 |          0 |       0 |    0 |    3 |      0 |      0 |          0 |
+|     u_req                           |                     dport_axi_fifo |         43 |         43 |       0 |    0 |  138 |      0 |      0 |          0 |
+|     u_resp                          |     dport_axi_fifo__parameterized0 |          2 |          2 |       0 |    0 |    2 |      0 |      0 |          0 |
+|   u_core                            |                         riscv_core |       3436 |       3067 |     369 |    0 | 1559 |      0 |      0 |          4 |
+|     u_branch_predict                |               riscv_branch_predict |        171 |         58 |     113 |    0 |   64 |      0 |      0 |          0 |
+|     u_csr                           |                          riscv_csr |         88 |         88 |       0 |    0 |  382 |      0 |      0 |          0 |
+|       (u_csr)                       |                          riscv_csr |         18 |         18 |       0 |    0 |  105 |      0 |      0 |          0 |
+|       u_csrfile                     |                  riscv_csr_regfile |         70 |         70 |       0 |    0 |  277 |      0 |      0 |          0 |
+|     u_decode                        |                       riscv_decode |       1235 |       1235 |       0 |    0 |   64 |      0 |      0 |          0 |
+|     u_div                           |                      riscv_divider |        231 |        231 |       0 |    0 |  195 |      0 |      0 |          0 |
+|     u_exec                          |                         riscv_exec |         90 |         90 |       0 |    0 |   95 |      0 |      0 |          0 |
+|       (u_exec)                      |                         riscv_exec |         90 |         90 |       0 |    0 |   95 |      0 |      0 |          0 |
+|       u_alu                         |                          riscv_alu |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     u_fetch                         |                        riscv_fetch |        100 |        100 |       0 |    0 |  159 |      0 |      0 |          0 |
+|     u_issue                         |                        riscv_issue |       1233 |        977 |     256 |    0 |  307 |      0 |      0 |          0 |
+|       (u_issue)                     |                        riscv_issue |          0 |          0 |       0 |    0 |    2 |      0 |      0 |          0 |
+|       u_pipe_ctrl                   |                    riscv_pipe_ctrl |        962 |        962 |       0 |    0 |  305 |      0 |      0 |          0 |
+|       u_regfile                     |                      riscv_regfile |        271 |         15 |     256 |    0 |    0 |      0 |      0 |          0 |
+|         REGFILE_XILINX_SINGLE.u_reg |                  riscv_xilinx_2r1w |        271 |         15 |     256 |    0 |    0 |      0 |      0 |          0 |
+|     u_lsu                           |                          riscv_lsu |        217 |        217 |       0 |    0 |  194 |      0 |      0 |          0 |
+|       (u_lsu)                       |                          riscv_lsu |         62 |         62 |       0 |    0 |  118 |      0 |      0 |          0 |
+|       u_lsu_request                 |                     riscv_lsu_fifo |        155 |        155 |       0 |    0 |   76 |      0 |      0 |          0 |
+|     u_mul                           |                   riscv_multiplier |         71 |         71 |       0 |    0 |   99 |      0 |      0 |          4 |
+|   u_dmux                            |                          dport_mux |         26 |         26 |       0 |    0 |    6 |      0 |      0 |          0 |
+|   u_tcm                             |                            tcm_mem |        182 |        182 |       0 |    0 |  202 |     16 |      0 |          0 |
+|     (u_tcm)                         |                            tcm_mem |          1 |          1 |       0 |    0 |    4 |      0 |      0 |          0 |
+|     u_conv                          |                       tcm_mem_pmem |        141 |        141 |       0 |    0 |  198 |      0 |      0 |          0 |
+|       (u_conv)                      |                       tcm_mem_pmem |          4 |          4 |       0 |    0 |   32 |      0 |      0 |          0 |
+|       u_requests                    |                 tcm_mem_pmem_fifo2 |         98 |         98 |       0 |    0 |   31 |      0 |      0 |          0 |
+|       u_response                    | tcm_mem_pmem_fifo2__parameterized0 |         39 |         39 |       0 |    0 |  135 |      0 |      0 |          0 |
+|     u_ram                           |                        tcm_mem_ram |         40 |         40 |       0 |    0 |    0 |     16 |      0 |          0 |
++-------------------------------------+------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

@@ -1,0 +1,816 @@
+{
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 1290,
+      "sha256": "05bf285b336e11f86525a83984fbf1d7e3bb4a2471d6c518512cbe2898ae8e51"
+    },
+    {
+      "file": "constraints/clock_80MHz.xdc",
+      "bytes": 434,
+      "sha256": "66d3f6ab331b3e274e415ec7ea7241635352c9f45a9e4671ecf085d164391a40"
+    },
+    {
+      "file": "evidence/compiler_screen_report.md",
+      "bytes": 10016,
+      "sha256": "26fca39f9c6131dd51eedbd59f8a4fb9ee3b8d167b85f47419a6cbc960c038ad"
+    },
+    {
+      "file": "evidence/compiler_screen_results.csv",
+      "bytes": 3819,
+      "sha256": "034b64eb47e31984270bfb9c90dd546f08a87b67f71c00fa01dd96c7b46e515a"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.log",
+      "bytes": 2134,
+      "sha256": "2f55e41f0c9832ead4e7dfb58e940c1113f88f25c41406c750f0efeae3b16baf"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.signature.bin",
+      "bytes": 4096,
+      "sha256": "ce96e5bd25478167f752011238e9f28d2f0494439256635fab2bbd074ef788fc"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.signature.txt",
+      "bytes": 1076,
+      "sha256": "652afc88d5716a627e5b38298b99b22b9b3726db114de3b7928b6b0b2dc0ce4b"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.log",
+      "bytes": 2079,
+      "sha256": "bf07d68dfc1007a60df725f3a22c7f685657fc69b0cd9f66b4e6628c4cfb6250"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.signature.bin",
+      "bytes": 4096,
+      "sha256": "5b9a76346505957479cd544e2424f9e43191f289c2c676beabe2377e35f6a545"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.signature.txt",
+      "bytes": 1038,
+      "sha256": "e3b4ed37e6a738e6e04f17aa9073d42624a485b775115ac4911bd012e69d9240"
+    },
+    {
+      "file": "evidence/functional/fetch_recovery.log",
+      "bytes": 260,
+      "sha256": "eb13c57f3e9542da6c385eb041c70025ce35994edb2bc94c54c447513165163a"
+    },
+    {
+      "file": "evidence/functional/short_off_v4.log",
+      "bytes": 464,
+      "sha256": "1c9287df3fabada42ba39378581f2cf6b1d7ca22bd6896abba5b7ef44a7e9da6"
+    },
+    {
+      "file": "evidence/functional/short_on_v4.log",
+      "bytes": 1057,
+      "sha256": "781f01878bdf081fa42723915a11e4d55b54250503cbeea3de12ab6b97a481de"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_check_timing.rpt",
+      "bytes": 8589,
+      "sha256": "046191bfa49f39655cfdb6c48570d4eb8352afb63f30cbed9de16bd1ed4a2c45"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_critical_paths.rpt",
+      "bytes": 218611,
+      "sha256": "588c928e410fddb2ceaa1d5156eb1403fdd846650e71f27be742141d56529d4a"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_drc.rpt",
+      "bytes": 22530,
+      "sha256": "c242051711307454802beaa25ec2287069206dc2e4f2ac290eeb894343783ef9"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_timing_summary.rpt",
+      "bytes": 348670,
+      "sha256": "eeb3e4e61ad20f68f10540943b6e86217c4d56f08a5515cce1207f2c64f8c9cf"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_utilization.rpt",
+      "bytes": 10881,
+      "sha256": "f15f169fc3ea44610ebc012392b7c443e211089eff5488fac1786ee3140ac19a"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_utilization_hierarchical.rpt",
+      "bytes": 7204,
+      "sha256": "d411d92869e6ca466e1b2e3937c43d01ef852fdaad01a17c8d0d866e810768d7"
+    },
+    {
+      "file": "evidence/ppa/routed_manifest.txt",
+      "bytes": 364,
+      "sha256": "6ae56623d55ed83ae4c2746484be7ae5b1be976e9931b02dd5918ae8f7408a97"
+    },
+    {
+      "file": "evidence/software_full/build.log",
+      "bytes": 11609,
+      "sha256": "c979c5162356791f3b3f655ad1570820e8ebee70c667c9c3eec87a25b570b5a6"
+    },
+    {
+      "file": "evidence/software_full/coremark.elf",
+      "bytes": 51064,
+      "sha256": "ff7f87bfcc03b0acb7242ac15e12ccec2e0df9168631899a5746182e374264fa"
+    },
+    {
+      "file": "evidence/software_full/sections.txt",
+      "bytes": 610,
+      "sha256": "85d81c92d2bdd8958ede6164389196faac560519688e8fd60b45203740ab031d"
+    },
+    {
+      "file": "evidence/software_full/symbols.txt",
+      "bytes": 815,
+      "sha256": "37750657d132141be983424bb3ffefad8c5c6bb52421ed16a86f946515ff2264"
+    },
+    {
+      "file": "evidence/software_short/build.log",
+      "bytes": 11619,
+      "sha256": "28b18e19e95806ba287415102e6120b4a3899e23fa52740e835e67307ac29e5a"
+    },
+    {
+      "file": "evidence/software_short/coremark.elf",
+      "bytes": 51064,
+      "sha256": "4acc89b5ac2fbdefc0bd50f3bbfe03d6d32265a19ab3da986db5ad9b591aab9b"
+    },
+    {
+      "file": "evidence/software_short/sections.txt",
+      "bytes": 612,
+      "sha256": "4ed7f1008a3b4001ac11a6526b0546b8060cbf8458db52bda16be613d74f1a7c"
+    },
+    {
+      "file": "evidence/software_short/symbols.txt",
+      "bytes": 815,
+      "sha256": "37750657d132141be983424bb3ffefad8c5c6bb52421ed16a86f946515ff2264"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 1518,
+      "sha256": "d17c7bea9aac7f63ff4fc6350e149f7df438d504945d534038d48dbf907eccaa"
+    },
+    {
+      "file": "provenance_scripts/implement_e_tcm_v4_ooc.tcl",
+      "bytes": 6467,
+      "sha256": "327efcf14c585e7da551bd1569cbf5863ed49e4f22889019208a546427d3a48f"
+    },
+    {
+      "file": "provenance_scripts/run_compiler_screen_20260915.ps1",
+      "bytes": 17271,
+      "sha256": "1f6fb20429110bbe5b2406302add6dff5616910fea2a5cb6165390fe2b181e35"
+    },
+    {
+      "file": "provenance_scripts/run_v4.ps1",
+      "bytes": 7967,
+      "sha256": "0bccff302d55fa5e72d4a89f079bf3780fa62c345444032586238032085e68e8"
+    },
+    {
+      "file": "README.md",
+      "bytes": 881,
+      "sha256": "87e49a43c75b2c509564e2a0014842988f985e6890beda2cfb648244c3203c16"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_alu.v",
+      "bytes": 7351,
+      "sha256": "bb0653535a3e4b8261c2890d0407e65535d972d3623e05b5d4e59191d00fa864"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_branch_predict.v",
+      "bytes": 8680,
+      "sha256": "005d874fe08265f2aea69d0e9dbbade2ea4dc4537a1fd351082f94b218787acb"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_core.v",
+      "bytes": 52901,
+      "sha256": "9f77fe49e6d51656ada4025040e024862f255e29c83f25a5df35ea72bd73ef0e"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_csr.v",
+      "bytes": 13907,
+      "sha256": "bcfc9b80d817846d7053c27c1eee2fa8c0ba20e628a7cdefd93705865719e69d"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_csr_regfile.v",
+      "bytes": 24398,
+      "sha256": "61d691484608dd574634f8404a0b36723ac5cd0ea6968b3f8c6367767fe4d4e7"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_decode.v",
+      "bytes": 7970,
+      "sha256": "d693f09294bcbe3bd05c9f33606785834eb0010f2f65fb6caaee26b11382c3b5"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_decoder.v",
+      "bytes": 15200,
+      "sha256": "bd63acc5c544073beca96f04f30b454cfc74aeef8af2d73ae6515f1c582ea62a"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_defs.v",
+      "bytes": 18051,
+      "sha256": "c65e29b4cfc64f5108d291975bfcf2e8bc60802391e0bc23d6fa32638bdef614"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_divider.v",
+      "bytes": 6320,
+      "sha256": "b668913f854ccb7ed1466fee84a8a128fe52cfb9d996578308db0b919190fbfc"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_exec.v",
+      "bytes": 20138,
+      "sha256": "bab174021ce943b088f36b7fcd62b00f81c1fd07689c0c52a7b20fea35b3baa8"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_fetch.v",
+      "bytes": 10544,
+      "sha256": "4cd78fcf55070537864dd00b10b29b4a94941c3062a151370bf7f138b127830e"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_issue.v",
+      "bytes": 36639,
+      "sha256": "cd9a09961745f8acca596cc6d2c2dc1703ab57357de4fca0384b73e1eaf38794"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_lsu.v",
+      "bytes": 26361,
+      "sha256": "a58d54c217b154f2c9616f97d2b52b4f0c34b4c3cdee282e07691ab33d02ba26"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_mmu.v",
+      "bytes": 21414,
+      "sha256": "85af9e4b3c419605c1bd5766f90c54dd1707a318a7ef4cc5c5bdbb8655b485da"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_multiplier.v",
+      "bytes": 5599,
+      "sha256": "73f8410fe7385cf36c1ad3d0c501f4eb9bac7504a4c8f34cd10e4ab424d55781"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_pipe_ctrl.v",
+      "bytes": 18407,
+      "sha256": "9a2044de6e6ed99ba4788192c57440a1b28c3cfa910dc2ceb3848f02bb4a97f6"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_regfile.v",
+      "bytes": 15413,
+      "sha256": "1b8389750c2a2b492dead477989c7564d7eb2998dec3cb89075e4c4edb87f3db"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_trace_sim.v",
+      "bytes": 13302,
+      "sha256": "e1ea5a01eb3b67586dea28abdae342a36f101764f6723aa7a8a20b6d07c2deb0"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_xilinx_2r1w.v",
+      "bytes": 5964,
+      "sha256": "9a070e9a13c2a5507837e9af661e33bcc5e46b6a54624c2a2fa0296db4a5d628"
+    },
+    {
+      "file": "rtl/core/riscv/scoreboard_trace.vh",
+      "bytes": 33756,
+      "sha256": "a256ae4ba60cf35610212a3b0ff4c29b873e7367f7cbdc263810e6d123db3fba"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/dport_axi.v",
+      "bytes": 10224,
+      "sha256": "3ace83a86f4af75b696fe67bfa70432a3441bed1dc093eb542d2326fc2bceda0"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/dport_mux.v",
+      "bytes": 9414,
+      "sha256": "7acf5e547b3a50b865512478372b9c3e2140f26a3c5d22588c16781b7bfd9f99"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/riscv_tcm_top.v",
+      "bytes": 13775,
+      "sha256": "d29095f93f95ded2f011b6fe6ee1ffc33eafec211b818d904f428236eed84238"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem.v",
+      "bytes": 10492,
+      "sha256": "095a12511ef38ca3f61d5aed9fbf9db11885d80fd1ad27e51d0437bc3ed47e76"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem_pmem.v",
+      "bytes": 13958,
+      "sha256": "369e0196627019c88f71ab61c567dea9cfafd0ab02bec1cc3cb122c4d266e28d"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem_ram.v",
+      "bytes": 3815,
+      "sha256": "4d3dcef36d85732870d0473ea20f12531782cb57b894c5c6ab0db528496ddf3a"
+    },
+    {
+      "file": "simulation/tb/axi4.h",
+      "bytes": 7366,
+      "sha256": "1a41e857ca52cc8db5e2fae928688ad58c6951fa5942faa8c8d9b5bb8c076462"
+    },
+    {
+      "file": "simulation/tb/axi4_lite.h",
+      "bytes": 5426,
+      "sha256": "4a3fd2ce2be38578d041ee60e9048301fc3b47d514439cd0531fe2414be6f374"
+    },
+    {
+      "file": "simulation/tb/main.cpp",
+      "bytes": 4268,
+      "sha256": "2b95d41feb48b402a009664d1ab89e81558cfa785816fefa22678311ee867c17"
+    },
+    {
+      "file": "simulation/tb/makefile",
+      "bytes": 926,
+      "sha256": "4c2f93e13cf40c8672025f6c31e26aeebbe62bfd095f353569159ec55cb744e4"
+    },
+    {
+      "file": "simulation/tb/makefile.build_sysc_tb",
+      "bytes": 1852,
+      "sha256": "dbede7c5488e71e925668ff47dce6f5118db9f60c691a61899af85def445f92d"
+    },
+    {
+      "file": "simulation/tb/makefile.build_verilated",
+      "bytes": 1833,
+      "sha256": "750cb0b7f427bffac2b357fc79d6da3331ae159aae4ab99fc9eeeb3393724705"
+    },
+    {
+      "file": "simulation/tb/makefile.generate_verilated",
+      "bytes": 1290,
+      "sha256": "f2f2272e1ffd29593cff096da4382b259296b756f5818d1b4b18b8191600ae03"
+    },
+    {
+      "file": "simulation/tb/riscv_tcm_top_rtl.cpp",
+      "bytes": 7379,
+      "sha256": "e8d1669b742cb5e42c217ad8767a21bf045c3be577e0d2ed383db26715b62883"
+    },
+    {
+      "file": "simulation/tb/riscv_tcm_top_rtl.h",
+      "bytes": 4180,
+      "sha256": "92f57257c8cecf82a4fcc6c8b08ebb906edc0e99ec6dbe92007d7f1810b0a3ed"
+    },
+    {
+      "file": "simulation/tb/sc_reset_gen.h",
+      "bytes": 520,
+      "sha256": "8ca054f17e81d660af831edb6abf0e9d4706f7dc30acb930e02c2928d788357b"
+    },
+    {
+      "file": "simulation/tb/testbench.h",
+      "bytes": 156163,
+      "sha256": "85ed29768359ca2f9397e6d9f66b7bd6e0b775c97af7cd4053e88c40651f39f7"
+    },
+    {
+      "file": "simulation/tb/testbench_vbase.h",
+      "bytes": 2621,
+      "sha256": "5caddd55ad3234ee81958f25b42023324e87742bee1a8bf34370eb7056ce2235"
+    },
+    {
+      "file": "software/core_list_join.c",
+      "bytes": 18225,
+      "sha256": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b"
+    },
+    {
+      "file": "software/core_main.c",
+      "bytes": 15981,
+      "sha256": "803e2616a25ff3a7191e8274080aff4397b918bb06821b933c99363e70f76080"
+    },
+    {
+      "file": "software/core_matrix.c",
+      "bytes": 9598,
+      "sha256": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4"
+    },
+    {
+      "file": "software/core_portme.c",
+      "bytes": 6468,
+      "sha256": "f425eee20551b1e5e29b4d6b254a22a10e7dc06e49b2eaa0d11297f3f8487068"
+    },
+    {
+      "file": "software/core_portme.h",
+      "bytes": 2690,
+      "sha256": "204d38c295c72bb2ba66a37692de4260b1ab50089df7c8ccd63bf399ec4c32b6"
+    },
+    {
+      "file": "software/core_state.c",
+      "bytes": 9707,
+      "sha256": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e"
+    },
+    {
+      "file": "software/core_util.c",
+      "bytes": 6004,
+      "sha256": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f"
+    },
+    {
+      "file": "software/coremark.h",
+      "bytes": 4760,
+      "sha256": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a"
+    },
+    {
+      "file": "software/ee_printf.c",
+      "bytes": 16152,
+      "sha256": "324eb16ad59d21c1836f72aa0d41130401e12c73e7bf0cd5ef03c31da1d73d84"
+    },
+    {
+      "file": "software/linker.ld",
+      "bytes": 949,
+      "sha256": "96204b95491bbdb493141abcb8e3313eb03f52ac07592e68051b18252842a3c8"
+    },
+    {
+      "file": "software/startup.S",
+      "bytes": 345,
+      "sha256": "a789d93064d985fe36d26ad984a878190fbffcd0e6d4a6662ae0c8d29ff31066"
+    }
+  ],
+  "origins": [
+    {
+      "file": "rtl/core/riscv/riscv_alu.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_alu.v",
+      "source_sha256": "bb0653535a3e4b8261c2890d0407e65535d972d3623e05b5d4e59191d00fa864"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_branch_predict.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_branch_predict.v",
+      "source_sha256": "005d874fe08265f2aea69d0e9dbbade2ea4dc4537a1fd351082f94b218787acb"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_core.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_core.v",
+      "source_sha256": "9f77fe49e6d51656ada4025040e024862f255e29c83f25a5df35ea72bd73ef0e"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_csr.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_csr.v",
+      "source_sha256": "bcfc9b80d817846d7053c27c1eee2fa8c0ba20e628a7cdefd93705865719e69d"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_csr_regfile.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_csr_regfile.v",
+      "source_sha256": "61d691484608dd574634f8404a0b36723ac5cd0ea6968b3f8c6367767fe4d4e7"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_decode.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_decode.v",
+      "source_sha256": "d693f09294bcbe3bd05c9f33606785834eb0010f2f65fb6caaee26b11382c3b5"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_decoder.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_decoder.v",
+      "source_sha256": "bd63acc5c544073beca96f04f30b454cfc74aeef8af2d73ae6515f1c582ea62a"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_defs.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_defs.v",
+      "source_sha256": "c65e29b4cfc64f5108d291975bfcf2e8bc60802391e0bc23d6fa32638bdef614"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_divider.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_divider.v",
+      "source_sha256": "b668913f854ccb7ed1466fee84a8a128fe52cfb9d996578308db0b919190fbfc"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_exec.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_exec.v",
+      "source_sha256": "bab174021ce943b088f36b7fcd62b00f81c1fd07689c0c52a7b20fea35b3baa8"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_fetch.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_fetch.v",
+      "source_sha256": "4cd78fcf55070537864dd00b10b29b4a94941c3062a151370bf7f138b127830e"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_issue.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_issue.v",
+      "source_sha256": "cd9a09961745f8acca596cc6d2c2dc1703ab57357de4fca0384b73e1eaf38794"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_lsu.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_lsu.v",
+      "source_sha256": "a58d54c217b154f2c9616f97d2b52b4f0c34b4c3cdee282e07691ab33d02ba26"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_mmu.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_mmu.v",
+      "source_sha256": "85af9e4b3c419605c1bd5766f90c54dd1707a318a7ef4cc5c5bdbb8655b485da"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_multiplier.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_multiplier.v",
+      "source_sha256": "73f8410fe7385cf36c1ad3d0c501f4eb9bac7504a4c8f34cd10e4ab424d55781"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_pipe_ctrl.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_pipe_ctrl.v",
+      "source_sha256": "9a2044de6e6ed99ba4788192c57440a1b28c3cfa910dc2ceb3848f02bb4a97f6"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_regfile.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_regfile.v",
+      "source_sha256": "1b8389750c2a2b492dead477989c7564d7eb2998dec3cb89075e4c4edb87f3db"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_trace_sim.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_trace_sim.v",
+      "source_sha256": "e1ea5a01eb3b67586dea28abdae342a36f101764f6723aa7a8a20b6d07c2deb0"
+    },
+    {
+      "file": "rtl/core/riscv/riscv_xilinx_2r1w.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/riscv_xilinx_2r1w.v",
+      "source_sha256": "9a070e9a13c2a5507837e9af661e33bcc5e46b6a54624c2a2fa0296db4a5d628"
+    },
+    {
+      "file": "rtl/core/riscv/scoreboard_trace.vh",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/core/riscv/scoreboard_trace.vh",
+      "source_sha256": "a256ae4ba60cf35610212a3b0ff4c29b873e7367f7cbdc263810e6d123db3fba"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/dport_axi.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/dport_axi.v",
+      "source_sha256": "3ace83a86f4af75b696fe67bfa70432a3441bed1dc093eb542d2326fc2bceda0"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/dport_mux.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/dport_mux.v",
+      "source_sha256": "7acf5e547b3a50b865512478372b9c3e2140f26a3c5d22588c16781b7bfd9f99"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/riscv_tcm_top.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/riscv_tcm_top.v",
+      "source_sha256": "d29095f93f95ded2f011b6fe6ee1ffc33eafec211b818d904f428236eed84238"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/tcm_mem.v",
+      "source_sha256": "095a12511ef38ca3f61d5aed9fbf9db11885d80fd1ad27e51d0437bc3ed47e76"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem_pmem.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/tcm_mem_pmem.v",
+      "source_sha256": "369e0196627019c88f71ab61c567dea9cfafd0ab02bec1cc3cb122c4d266e28d"
+    },
+    {
+      "file": "rtl/top_tcm_axi/src_v/tcm_mem_ram.v",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/src_v/tcm_mem_ram.v",
+      "source_sha256": "4d3dcef36d85732870d0473ea20f12531782cb57b894c5c6ab0db528496ddf3a"
+    },
+    {
+      "file": "simulation/tb/axi4.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/axi4.h",
+      "source_sha256": "1a41e857ca52cc8db5e2fae928688ad58c6951fa5942faa8c8d9b5bb8c076462"
+    },
+    {
+      "file": "simulation/tb/axi4_lite.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/axi4_lite.h",
+      "source_sha256": "4a3fd2ce2be38578d041ee60e9048301fc3b47d514439cd0531fe2414be6f374"
+    },
+    {
+      "file": "simulation/tb/main.cpp",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/main.cpp",
+      "source_sha256": "2b95d41feb48b402a009664d1ab89e81558cfa785816fefa22678311ee867c17"
+    },
+    {
+      "file": "simulation/tb/makefile",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/makefile",
+      "source_sha256": "4c2f93e13cf40c8672025f6c31e26aeebbe62bfd095f353569159ec55cb744e4"
+    },
+    {
+      "file": "simulation/tb/makefile.build_sysc_tb",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/makefile.build_sysc_tb",
+      "source_sha256": "dbede7c5488e71e925668ff47dce6f5118db9f60c691a61899af85def445f92d"
+    },
+    {
+      "file": "simulation/tb/makefile.build_verilated",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/makefile.build_verilated",
+      "source_sha256": "750cb0b7f427bffac2b357fc79d6da3331ae159aae4ab99fc9eeeb3393724705"
+    },
+    {
+      "file": "simulation/tb/makefile.generate_verilated",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/makefile.generate_verilated",
+      "source_sha256": "f2f2272e1ffd29593cff096da4382b259296b756f5818d1b4b18b8191600ae03"
+    },
+    {
+      "file": "simulation/tb/riscv_tcm_top_rtl.cpp",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/riscv_tcm_top_rtl.cpp",
+      "source_sha256": "e8d1669b742cb5e42c217ad8767a21bf045c3be577e0d2ed383db26715b62883"
+    },
+    {
+      "file": "simulation/tb/riscv_tcm_top_rtl.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/riscv_tcm_top_rtl.h",
+      "source_sha256": "92f57257c8cecf82a4fcc6c8b08ebb906edc0e99ec6dbe92007d7f1810b0a3ed"
+    },
+    {
+      "file": "simulation/tb/sc_reset_gen.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/sc_reset_gen.h",
+      "source_sha256": "8ca054f17e81d660af831edb6abf0e9d4706f7dc30acb930e02c2928d788357b"
+    },
+    {
+      "file": "simulation/tb/testbench.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/testbench.h",
+      "source_sha256": "85ed29768359ca2f9397e6d9f66b7bd6e0b775c97af7cd4053e88c40651f39f7"
+    },
+    {
+      "file": "simulation/tb/testbench_vbase.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4/top_tcm_axi/tb/testbench_vbase.h",
+      "source_sha256": "5caddd55ad3234ee81958f25b42023324e87742bee1a8bf34370eb7056ce2235"
+    },
+    {
+      "file": "software/core_main.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_main.c",
+      "source_sha256": "803e2616a25ff3a7191e8274080aff4397b918bb06821b933c99363e70f76080"
+    },
+    {
+      "file": "software/core_list_join.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_list_join.c",
+      "source_sha256": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b"
+    },
+    {
+      "file": "software/core_matrix.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_matrix.c",
+      "source_sha256": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4"
+    },
+    {
+      "file": "software/core_state.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_state.c",
+      "source_sha256": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e"
+    },
+    {
+      "file": "software/core_util.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_util.c",
+      "source_sha256": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f"
+    },
+    {
+      "file": "software/core_portme.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_portme.c",
+      "source_sha256": "f425eee20551b1e5e29b4d6b254a22a10e7dc06e49b2eaa0d11297f3f8487068"
+    },
+    {
+      "file": "software/ee_printf.c",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/ee_printf.c",
+      "source_sha256": "324eb16ad59d21c1836f72aa0d41130401e12c73e7bf0cd5ef03c31da1d73d84"
+    },
+    {
+      "file": "software/coremark.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/coremark.h",
+      "source_sha256": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a"
+    },
+    {
+      "file": "software/core_portme.h",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/core_portme.h",
+      "source_sha256": "204d38c295c72bb2ba66a37692de4260b1ab50089df7c8ccd63bf399ec4c32b6"
+    },
+    {
+      "file": "software/startup.S",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/startup.S",
+      "source_sha256": "a789d93064d985fe36d26ad984a878190fbffcd0e6d4a6662ae0c8d29ff31066"
+    },
+    {
+      "file": "software/linker.ld",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/source/coremark-ultra/linker.ld",
+      "source_sha256": "96204b95491bbdb493141abcb8e3313eb03f52ac07592e68051b18252842a3c8"
+    },
+    {
+      "file": "LICENSE",
+      "source": "runs/ultra-top-tcm-bht-btb/LICENSE",
+      "source_sha256": "d17c7bea9aac7f63ff4fc6350e149f7df438d504945d534038d48dbf907eccaa"
+    },
+    {
+      "file": "constraints/clock_80MHz.xdc",
+      "source": "vivado/ultra_bht_btb_followup/rtl/ultra_top_tcm_80MHz.xdc",
+      "source_sha256": "66d3f6ab331b3e274e415ec7ea7241635352c9f45a9e4671ecf085d164391a40"
+    },
+    {
+      "file": "evidence/software_full/coremark.elf",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/full/C/coremark.elf",
+      "source_sha256": "ff7f87bfcc03b0acb7242ac15e12ccec2e0df9168631899a5746182e374264fa"
+    },
+    {
+      "file": "evidence/software_full/build.log",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/full/C/build.log",
+      "source_sha256": "c979c5162356791f3b3f655ad1570820e8ebee70c667c9c3eec87a25b570b5a6"
+    },
+    {
+      "file": "evidence/software_full/sections.txt",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/full/C/sections.txt",
+      "source_sha256": "85d81c92d2bdd8958ede6164389196faac560519688e8fd60b45203740ab031d"
+    },
+    {
+      "file": "evidence/software_full/symbols.txt",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/full/C/symbols.txt",
+      "source_sha256": "37750657d132141be983424bb3ffefad8c5c6bb52421ed16a86f946515ff2264"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.log",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/full_C.log",
+      "source_sha256": "2f55e41f0c9832ead4e7dfb58e940c1113f88f25c41406c750f0efeae3b16baf"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.signature.bin",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/full_C.signature.bin",
+      "source_sha256": "ce96e5bd25478167f752011238e9f28d2f0494439256635fab2bbd074ef788fc"
+    },
+    {
+      "file": "evidence/coremark_full/full_C.signature.txt",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/full_C.signature.txt",
+      "source_sha256": "652afc88d5716a627e5b38298b99b22b9b3726db114de3b7928b6b0b2dc0ce4b"
+    },
+    {
+      "file": "evidence/software_short/coremark.elf",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/short/C/coremark.elf",
+      "source_sha256": "4acc89b5ac2fbdefc0bd50f3bbfe03d6d32265a19ab3da986db5ad9b591aab9b"
+    },
+    {
+      "file": "evidence/software_short/build.log",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/short/C/build.log",
+      "source_sha256": "28b18e19e95806ba287415102e6120b4a3899e23fa52740e835e67307ac29e5a"
+    },
+    {
+      "file": "evidence/software_short/sections.txt",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/short/C/sections.txt",
+      "source_sha256": "4ed7f1008a3b4001ac11a6526b0546b8060cbf8458db52bda16be613d74f1a7c"
+    },
+    {
+      "file": "evidence/software_short/symbols.txt",
+      "source": "vivado/ultra_bht_btb_followup/sim/compiler_screen_20260915/build/short/C/symbols.txt",
+      "source_sha256": "37750657d132141be983424bb3ffefad8c5c6bb52421ed16a86f946515ff2264"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.log",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/short_C.log",
+      "source_sha256": "bf07d68dfc1007a60df725f3a22c7f685657fc69b0cd9f66b4e6628c4cfb6250"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.signature.bin",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/short_C.signature.bin",
+      "source_sha256": "5b9a76346505957479cd544e2424f9e43191f289c2c676beabe2377e35f6a545"
+    },
+    {
+      "file": "evidence/coremark_short/short_C.signature.txt",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/short_C.signature.txt",
+      "source_sha256": "e3b4ed37e6a738e6e04f17aa9073d42624a485b775115ac4911bd012e69d9240"
+    },
+    {
+      "file": "evidence/compiler_screen_report.md",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/compiler_screen_report.md",
+      "source_sha256": "26fca39f9c6131dd51eedbd59f8a4fb9ee3b8d167b85f47419a6cbc960c038ad"
+    },
+    {
+      "file": "evidence/compiler_screen_results.csv",
+      "source": "vivado/ultra_bht_btb_followup/reports/compiler_screen_20260915/compiler_screen_results.csv",
+      "source_sha256": "034b64eb47e31984270bfb9c90dd546f08a87b67f71c00fa01dd96c7b46e515a"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_timing_summary.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_timing_summary.rpt",
+      "source_sha256": "eeb3e4e61ad20f68f10540943b6e86217c4d56f08a5515cce1207f2c64f8c9cf"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_utilization.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_utilization.rpt",
+      "source_sha256": "f15f169fc3ea44610ebc012392b7c443e211089eff5488fac1786ee3140ac19a"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_utilization_hierarchical.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_utilization_hierarchical.rpt",
+      "source_sha256": "d411d92869e6ca466e1b2e3937c43d01ef852fdaad01a17c8d0d866e810768d7"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_drc.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_drc.rpt",
+      "source_sha256": "c242051711307454802beaa25ec2287069206dc2e4f2ac290eeb894343783ef9"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_check_timing.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_check_timing.rpt",
+      "source_sha256": "046191bfa49f39655cfdb6c48570d4eb8352afb63f30cbed9de16bd1ed4a2c45"
+    },
+    {
+      "file": "evidence/ppa/e_tcm_v4_routed_critical_paths.rpt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/e_tcm_v4_routed_critical_paths.rpt",
+      "source_sha256": "588c928e410fddb2ceaa1d5156eb1403fdd846650e71f27be742141d56529d4a"
+    },
+    {
+      "file": "evidence/ppa/routed_manifest.txt",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/vivado_post_v4/routed_manifest.txt",
+      "source_sha256": "6ae56623d55ed83ae4c2746484be7ae5b1be976e9931b02dd5918ae8f7408a97"
+    },
+    {
+      "file": "evidence/functional/fetch_recovery.log",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/fetch_recovery.log",
+      "source_sha256": "eb13c57f3e9542da6c385eb041c70025ce35994edb2bc94c54c447513165163a"
+    },
+    {
+      "file": "evidence/functional/short_off_v4.log",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/short_off_v4.log",
+      "source_sha256": "1c9287df3fabada42ba39378581f2cf6b1d7ca22bd6896abba5b7ef44a7e9da6"
+    },
+    {
+      "file": "evidence/functional/short_on_v4.log",
+      "source": "vivado/ultra_bht_btb_followup/reports/early_tcm_e_tcm_v4/short_on_v4.log",
+      "source_sha256": "781f01878bdf081fa42723915a11e4d55b54250503cbeea3de12ab6b97a481de"
+    },
+    {
+      "file": "provenance_scripts/run_compiler_screen_20260915.ps1",
+      "source": "vivado/ultra_bht_btb_followup/scripts/run_compiler_screen_20260915.ps1",
+      "source_sha256": "1f6fb20429110bbe5b2406302add6dff5616910fea2a5cb6165390fe2b181e35"
+    },
+    {
+      "file": "provenance_scripts/run_v4.ps1",
+      "source": "vivado/ultra_bht_btb_followup/scripts/early_tcm_e_tcm_v4/run_v4.ps1",
+      "source_sha256": "0bccff302d55fa5e72d4a89f079bf3780fa62c345444032586238032085e68e8"
+    },
+    {
+      "file": "provenance_scripts/implement_e_tcm_v4_ooc.tcl",
+      "source": "vivado/ultra_bht_btb_followup/scripts/early_tcm_e_tcm_v4/implement_e_tcm_v4_ooc.tcl",
+      "source_sha256": "327efcf14c585e7da551bd1569cbf5863ed49e4f22889019208a546427d3a48f"
+    }
+  ]
+}

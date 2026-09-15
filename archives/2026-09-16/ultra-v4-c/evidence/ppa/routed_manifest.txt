@@ -1,0 +1,11 @@
+candidate=E-TCM-v4
+mode=route
+extra_decode_stage=1
+support_regfile_xilinx=1
+support_branch_prediction=1
+support_early_tcm_load=1
+clock_ns=12.500
+part=xc7z020clg400-1
+source_root=D:/code/FPGA/vivado/ultra_bht_btb_followup/sim/early_tcm_e_tcm_v4
+constraint_file=D:/code/FPGA/vivado/ultra_bht_btb_followup/rtl/ultra_top_tcm_80MHz.xdc
+vivado_version=2022.2

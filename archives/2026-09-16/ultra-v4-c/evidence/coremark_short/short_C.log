@@ -1,0 +1,59 @@
+RUN_CONFIG=C
+WORKLOAD=short
+ITERATIONS=16
+COMPILER=xPack GNU RISC-V Embedded GCC 15.2.0
+FLAGS=-O3 -flto -funroll-loops
+ELF=/work/compiler_screen_20260915/build/short/C/coremark.elf
+HALT_PC=0x0000202c
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+Memory: 0x2000 - 0xa7e7 (Size=33KB) [.text]
+Memory: 0xa7e8 - 0xb3af (Size=2KB) [.rodata]
+Memory: 0xb3b0 - 0xb3b7 (Size=0KB) [.data]
+Memory: 0xb3b8 - 0xbbef (Size=2KB) [.bss]
+Memory: 0xe000 - 0xefff (Size=4KB) [.signature]
+Starting from 0x00002000
+branch_resolved       : 907238
+branch_conditional    : 803103
+branch_jal            : 84052
+branch_jalr_ret       : 20083
+branch_btb_hit        : 812491
+branch_btb_miss       : 74664
+branch_pred_taken     : 425232
+branch_correct        : 789317
+branch_mispredict     : 97838
+Dumping post simulation memory: 0x0000e000-0x0000f000 (4096 bytes) [/followup/reports/compiler_screen_20260915/short_C.signature.bin]
+TB: Aborted at 52386720 ns
+SIM_COMMAND_EXIT=0
+cycle_start     : 14502
+cycle_end       : 5200894
+instret_start   : 12793
+instret_end     : 4602209
+cycles          : 5186392
+instructions retired: 4589416
+scoreboard_stall_cycles : 214529
+lsu_stall_cycles        : 0
+pipe_stall_cycles       : 0
+div_wait_cycles         : 0
+csr_wait_cycles         : 0
+branch_request_events   : 116932
+branch_redirect_cycles  : 116932
+branch_flush_cycles     : 233864
+fetch_starve_cycles     : 0
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 5186392
+Total time (secs): 0
+ERROR! Must execute for at least 10 secs for a valid result!
+Iterations       : 16
+Compiler version : riscv-none-elf-gcc 15.2.0
+Compiler flags   : -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medany -msmall-data-limit=0 -O3 -ffreestanding -fno-builtin -fno-stack-protector -fno-pic -fdata-sections -ffunction-sections top_tcm_axi
+Memory location  : TCM
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xdd50
+Errors detected

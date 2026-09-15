@@ -1,0 +1,28 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+Memory: 0x2000 - 0xb04f (Size=36KB) [.text]
+Memory: 0xb050 - 0xbc17 (Size=2KB) [.rodata]
+Memory: 0xbc18 - 0xbc1f (Size=0KB) [.data]
+Memory: 0xbc20 - 0xc577 (Size=2KB) [.bss]
+Memory: 0xe000 - 0xefff (Size=4KB) [.signature]
+Starting from 0x00002000
+PROFILE_ITER iteration=2 cycle=314659 retired=275437
+PROFILE_ITER iteration=3 cycle=614637 retired=537854
+PROFILE_ITER iteration=4 cycle=914521 retired=800235
+PROFILE_ITER iteration=5 cycle=1214279 retired=1062529
+PROFILE_CLOSURE status=PASS start=614637 end=1214279 cycles=599642 retired=524675 exceptions=0 opcode_errors=0
+PROFILE_WINDOW iteration=3 cycles=299884 retired=262381
+PROFILE_WINDOW iteration=4 cycles=299758 retired=262294
+PROFILE_STACK_MIN_BASE=0x0000fda0 (observed memory bases, not proof of all stack writes)
+branch_resolved       : 217516
+branch_conditional    : 192771
+branch_jal            : 19757
+branch_jalr_ret       : 4988
+branch_btb_hit        : 193506
+branch_btb_miss       : 19022
+branch_pred_taken     : 103511
+branch_correct        : 191134
+branch_mispredict     : 21394
+TB: Aborted at 12142820 ns

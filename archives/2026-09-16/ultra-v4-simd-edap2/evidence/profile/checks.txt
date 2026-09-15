@@ -1,0 +1,4 @@
+PASS all retired opcodes match actual ELF
+PASS no unmapped PCs
+PASS residency and retirement sums
+ROI iteration 3-4; source mapping follows inlined call frames; not causal cycle attribution

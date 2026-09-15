@@ -2,6 +2,8 @@
 
 基于 UltraEmbedded scalar RISC-V 的 CPU/SoC 开发工程。
 
+2026-09-16新增[两版开发归档](archives/README.md)：SIMD前的E-TCM v4＋C（516次约3.0853 CM/MHz），以及四指令SIMD＋EDAP2（16次约3.3340 CM/MHz，80MHz OOC时序通过）。各自RTL、配置、软件和证据独立保存；归档不改变下述历史accepted基线。
+
 当前版本：**v0.1.0-coremark-baseline**。用户于2026-09-08确认以 CoreMark 已跑通作为当前版本验收条件，接受现有 D1 为开发基线。详细范围和延期项见 [BASELINE.md](BASELINE.md)。
 
 | 目录 | 用途 |

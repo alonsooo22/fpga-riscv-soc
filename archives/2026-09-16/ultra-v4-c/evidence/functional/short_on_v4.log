@@ -1,0 +1,19 @@
+
+        SystemC 2.3.1-Accellera --- Sep  5 2026 12:13:39
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+ETCM_FOCUS enabled limit=20000 file=e_tcm_focus.csv
+Memory: 0x2000 - 0x2213 (Size=0KB) [.text]
+Starting from 0x00002000
+ETCM_FOCUS signature s0=0x11223345 s1=0x11223345 s2=0xbeef0001 s3=0xbeef0002 s4=0x11223344 s5=0x00004400 s6=0x00003344 s7=0xcafebabe s8=0x11223344 s9=0x11223345 s10=0x11223344 s11=0x11223344 s12=0x00003344 s13=0x11223344 s14=0x00006200 s15=0xcafebabe s16=0x00006200 status=PASS
+ETCM_FOCUS counts candidate=11 launch=11 response=11 consume=11 fast_capture=11 branches=2 branch_mispredict=3 release_alu=2 release_branch=1 release_store=6 store_data_B=1 store_data_H=1 store_data_W=3 store_address=1 store_both=0 bad=0 pending=0 trace_rows=334
+branch_resolved       : 4
+branch_conditional    : 2
+branch_jal            : 2
+branch_jalr_ret       : 0
+branch_btb_hit        : 0
+branch_btb_miss       : 4
+branch_pred_taken     : 0
+branch_correct        : 1
+branch_mispredict     : 3
+TB: Aborted at 1690 ns

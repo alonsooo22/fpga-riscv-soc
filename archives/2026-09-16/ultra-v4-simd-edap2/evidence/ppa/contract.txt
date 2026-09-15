@@ -1,0 +1,6 @@
+input=D:/code/FPGA/vivado/ultra_bht_btb_followup/sim/ultra_simd_subset_v1/build/vivado_ppa_12p5/simd_subset_v1_routed.dcp
+clock_ns=12.500
+rtl_changes=none
+new_synthesis=none
+mul_result_endpoints=44
+dot_dsp_cells=u_core/u_mul/g_dot2h.p0 u_core/u_mul/g_dot2h.sum

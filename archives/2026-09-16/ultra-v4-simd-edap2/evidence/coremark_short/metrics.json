@@ -1,0 +1,15 @@
+{
+  "cycles": 4799009,
+  "retired": 4198728,
+  "scoreboard": 272817,
+  "branch_flush": 207918,
+  "branch_request": 103959,
+  "cm_per_mhz": 3.3340216698905962,
+  "crc": {
+    "seedcrc": "e9f5",
+    "crclist": "e714",
+    "crcmatrix": "1fd7",
+    "crcstate": "8e3a",
+    "crcfinal": "dd50"
+  }
+}
