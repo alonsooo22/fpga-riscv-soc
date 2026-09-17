@@ -1,6 +1,6 @@
 # FPGA CPU / SoC
 
-基于 UltraEmbedded scalar RISC-V 的 CPU/SoC 开发工程。
+基于 RISC-V 的 CPU/SoC 开发工程。
 
 2026-09-16新增[两版开发归档](archives/README.md)：SIMD前的E-TCM v4＋C（516次约3.0853 CM/MHz），以及四指令SIMD＋EDAP2（16次约3.3340 CM/MHz，80MHz OOC时序通过）。各自RTL、配置、软件和证据独立保存；归档不改变下述历史accepted基线。
 
@@ -20,4 +20,3 @@
 
 已有运行入口：`runs/ultra-top-tcm-bht-btb/sim/baseline_closure/run_baseline_closure.ps1` 和 `vivado/ultra_scalar_bht_btb_xc7z020/run_baseline_closure_vivado.ps1`。不要为了取得最新文件快照而自动重跑；按改动影响选择必要检查。
 
-保留原始源码版权、许可证和移植追溯说明。CPU 的原始许可证见 `runs/ultra-top-tcm-bht-btb/LICENSE`；其他组件遵循各自文件中的声明。
